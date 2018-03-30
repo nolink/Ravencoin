@@ -2370,7 +2370,7 @@
         <translation>Въведете Ваш публичен адрес</translation>
     </message>
     <message>
-        <source>Raven Core</source>
+        <source>CarrotCore</source>
         <translation>Биткойн ядро</translation>
     </message>
     <message>

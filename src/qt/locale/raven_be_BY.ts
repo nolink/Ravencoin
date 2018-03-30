@@ -1258,8 +1258,8 @@
         <translation>Запусціць у фоне як дэман і прымаць каманды</translation>
     </message>
     <message>
-        <source>Raven Core</source>
-        <translation>Raven Core</translation>
+        <source>CarrotCore</source>
+        <translation>CarrotCore</translation>
     </message>
     <message>
         <source>Do you want to rebuild the block database now?</source>

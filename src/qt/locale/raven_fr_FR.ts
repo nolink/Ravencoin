@@ -1734,8 +1734,8 @@
         <translation>Impossible de démarrer le serveur HTTP. Voir le journal de débogage pour plus de détails.</translation>
     </message>
     <message>
-        <source>Raven Core</source>
-        <translation>Raven Core</translation>
+        <source>CarrotCore</source>
+        <translation>CarrotCore</translation>
     </message>
     <message>
         <source>&lt;category&gt; can be:</source>

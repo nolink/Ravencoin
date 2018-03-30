@@ -1012,7 +1012,7 @@
 <context>
     <name>raven-core</name>
     <message>
-        <source>Raven Core</source>
+        <source>CarrotCore</source>
         <translation>Raven Kern</translation>
     </message>
     <message>

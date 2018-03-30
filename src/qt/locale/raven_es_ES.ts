@@ -2937,8 +2937,8 @@
         <translation>No se ha podido comenzar el servidor HTTP. Ver debug log para detalles.</translation>
     </message>
     <message>
-        <source>Raven Core</source>
-        <translation>Raven Core</translation>
+        <source>CarrotCore</source>
+        <translation>CarrotCore</translation>
     </message>
     <message>
         <source>The %s developers</source>
