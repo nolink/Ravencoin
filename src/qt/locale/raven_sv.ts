@@ -3003,8 +3003,8 @@ Var vänlig och försök igen.</translation>
         <translation>Kunde inte starta HTTP-server. Se avlusningsloggen för detaljer.</translation>
     </message>
     <message>
-        <source>Raven Core</source>
-        <translation>Raven Core</translation>
+        <source>CarrotCore</source>
+        <translation>CarrotCore</translation>
     </message>
     <message>
         <source>The %s developers</source>

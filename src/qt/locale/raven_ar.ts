@@ -1960,7 +1960,7 @@
         <translation>حدد مجلد المعلومات</translation>
     </message>
     <message>
-        <source>Raven Core</source>
+        <source>CarrotCore</source>
         <translation>جوهر البيت كوين</translation>
     </message>
     <message>

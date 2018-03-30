@@ -936,7 +936,7 @@
         <translation>Dirbti fone kaip šešėlyje ir priimti komandas</translation>
     </message>
     <message>
-        <source>Raven Core</source>
+        <source>CarrotCore</source>
         <translation>Raven branduolys</translation>
     </message>
     <message>

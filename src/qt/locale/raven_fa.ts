@@ -1702,7 +1702,7 @@
         <translation>اجرا در پشت زمینه به‌صورت یک سرویس و پذیرش دستورات</translation>
     </message>
     <message>
-        <source>Raven Core</source>
+        <source>CarrotCore</source>
         <translation> هسته Raven </translation>
     </message>
     <message>

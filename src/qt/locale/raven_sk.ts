@@ -2987,8 +2987,8 @@
         <translation>Nepodarilo sa spustiť HTTP server. Pre viac detailov zobrazte debug log.</translation>
     </message>
     <message>
-        <source>Raven Core</source>
-        <translation>Raven Core</translation>
+        <source>CarrotCore</source>
+        <translation>CarrotCore</translation>
     </message>
     <message>
         <source>The %s developers</source>

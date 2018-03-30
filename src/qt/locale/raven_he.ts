@@ -2710,7 +2710,7 @@
         <translation>ריצה כסוכן ברקע וקבלת פקודות</translation>
     </message>
     <message>
-        <source>Raven Core</source>
+        <source>CarrotCore</source>
         <translation>ליבת ביטקוין</translation>
     </message>
     <message>

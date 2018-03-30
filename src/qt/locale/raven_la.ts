@@ -768,7 +768,7 @@
         <translation>Operare infere sicut daemon et mandata accipe</translation>
     </message>
     <message>
-        <source>Raven Core</source>
+        <source>CarrotCore</source>
         <translation>Raven Nucleus</translation>
     </message>
     <message>
