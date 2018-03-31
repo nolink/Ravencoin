@@ -522,6 +522,7 @@ inline uint256 HashWeightedX8R(const T1 pbegin, const T1 pend, const uint256 Pre
 
     uint512 hash[8];
 
+    int cnt = 0;
     for (int i=0;i<7;i++) 
     {
         const void *toHash;
@@ -536,7 +537,6 @@ inline uint256 HashWeightedX8R(const T1 pbegin, const T1 pend, const uint256 Pre
 
         hashSelection = GetWeightedHashSelection(PrevBlockHash, i);
 
-        int cnt = 0;
 
         switch(hashSelection) {
             case 0:
@@ -637,6 +637,8 @@ inline uint256 HashWeightedX8R(const T1 pbegin, const T1 pend, const uint256 Pre
                 break;
         }
     }
+    const void *toHash = static_cast<const void*>(&hash[6]);
+    int lenToHash = 64;
 
     if(cnt < 34) {
         sph_hamsi512_init(&ctx_hamsi);
