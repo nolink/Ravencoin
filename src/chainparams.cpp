@@ -167,10 +167,10 @@ public:
         genesis = CreateGenesisBlock(1522754428, 25023712, 0x1f00ffff, 4, 5000 * COIN); 
 
         consensus.hashGenesisBlock = genesis.GetHash();        
-        std::cout << consensus.hashGenesisBlock.GetHex() << "\n";
-        std::cout << "Merkle: " << genesis.hashMerkleRoot.GetHex() << "\n";
+        //std::cout << consensus.hashGenesisBlock.GetHex() << "\n";
+        //std::cout << "Merkle: " << genesis.hashMerkleRoot.GetHex() << "\n";
 
-        assert(consensus.hashGenesisBlock == uint256S("0xa54b29ead3cae35e6e5d330462cc25484402c444d0dc482ef508bb701f14ee3f"));
+        assert(consensus.hashGenesisBlock == uint256S("0xad653a2c33f3b97662aef7fc08d46cd58b899a1e49d3be18b9f69b00a13dddea"));
         assert(genesis.hashMerkleRoot == uint256S("0xea39896df8ef5e522ddd66f0798708d307d43269c61b3b2abe0177d52e4931fa"));
 
         vSeeds.emplace_back("seed.carrot.org", false); 
