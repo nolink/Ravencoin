@@ -171,7 +171,7 @@ public:
             if(CheckProofOfWork(genesis.GetHash(), genesis.nBits, consensus)){
                 std::cout << consensus.hashGenesisBlock.GetHex() << "\n";
                 std::cout << "Merkle: " << genesis.hashMerkleRoot.GetHex() << "\n";
-                std::cout << "nNonce: " << nNonce << endl;
+                std::cout << "nNonce: " << nNonce << "\n";
                 break;
             }
             nNonce++;
