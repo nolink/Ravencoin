@@ -166,7 +166,7 @@ public:
                   
         uint32_t nNonce = 0;
         while(true){
-            genesis = CreateGenesisBlock(1514999494, nNonce, 0x1e00ffff, 4, 5000 * COIN); 
+            genesis = CreateGenesisBlock(1522848138 , nNonce, 0x1e00ffff, 4, 5000 * COIN); 
             bool fNegative;
             bool fOverflow;
             arith_uint256 bnTarget;
@@ -190,7 +190,7 @@ public:
               }
 
             
-                std::cout << consensus.hashGenesisBlock.GetHex() << "\n";
+                std::cout << genesis.GetHash().GetHex() << "\n";
                 std::cout << "Merkle: " << genesis.hashMerkleRoot.GetHex() << "\n";
                 std::cout << "nNonce: " << nNonce << "\n";
                 break;
