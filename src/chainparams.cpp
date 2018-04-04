@@ -176,6 +176,7 @@ public:
             // Check range
             if (fNegative || bnTarget == 0 || fOverflow || bnTarget > UintToArith256(consensus.powLimit))
             {
+                std::cout << "case 1: " << nNonce << "\n";
                 nNonce++;
                 continue;
             }
@@ -183,6 +184,7 @@ public:
             // Check proof of work matches claimed amount
             if (UintToArith256(genesis.GetHash()) > bnTarget)
               {
+                std::cout << "case 2: " << nNonce << "\n";
                 nNonce++;
                 continue;
               }
