@@ -14,7 +14,6 @@
 #include <assert.h>
 
 #include "chainparamsseeds.h"
-#include "pow.h"
 
 //TODO: Take these out
 extern double algoHashTotal[16];
@@ -167,14 +166,34 @@ public:
                   
         uint32_t nNonce = 1;
         while(true){
-            genesis = CreateGenesisBlock(1522754428, nNonce, 0x1d00ffff, 4, 5000 * COIN);    
-            if(CheckProofOfWork(genesis.GetHash(), genesis.nBits, consensus)){
+            genesis = CreateGenesisBlock(1522754428, nNonce, 0x1d00ffff, 4, 5000 * COIN); 
+            bool fNegative;
+            bool fOverflow;
+            arith_uint256 bnTarget;
+
+            bnTarget.SetCompact(genesis.nBits, &fNegative, &fOverflow);
+
+            // Check range
+            if (fNegative || bnTarget == 0 || fOverflow || bnTarget > UintToArith256(consensus.powLimit))
+            {
+                nNonce++;
+                continue;
+            }
+
+            // Check proof of work matches claimed amount
+            if (UintToArith256(hash) > bnTarget)
+              {
+                nNonce++;
+                continue;
+              }
+
+            
                 std::cout << consensus.hashGenesisBlock.GetHex() << "\n";
                 std::cout << "Merkle: " << genesis.hashMerkleRoot.GetHex() << "\n";
                 std::cout << "nNonce: " << nNonce << "\n";
                 break;
-            }
-            nNonce++;
+            
+            
         }
         //genesis = CreateGenesisBlock(1522754428, 2083236893, 0x1d00ffff, 4, 5000 * COIN); 
 
