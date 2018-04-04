@@ -54,7 +54,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "The Times 03/Jan/1017 Chancellor on brink of second bailout for banks";
+    const char* pszTimestamp = "The Times 03/Jan/2018 Bitcoin is name of the game for new generation of firms";
     const CScript genesisOutputScript = CScript() << ParseHex("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
@@ -164,9 +164,9 @@ public:
         nDefaultPort = 9787;
         nPruneAfterHeight = 100000;
                   
-        uint32_t nNonce = 350186942;
+        uint32_t nNonce = 0;
         while(true){
-            genesis = CreateGenesisBlock(1522754428, nNonce, 0x1d00ffff, 4, 5000 * COIN); 
+            genesis = CreateGenesisBlock(1514999494, nNonce, 0x1e00ffff, 4, 5000 * COIN); 
             bool fNegative;
             bool fOverflow;
             arith_uint256 bnTarget;
