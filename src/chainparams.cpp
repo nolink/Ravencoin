@@ -54,7 +54,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "The Carrot Coin project is an awesome one";
+    const char* pszTimestamp = "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks";
     const CScript genesisOutputScript = CScript() << ParseHex("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
@@ -123,7 +123,7 @@ public:
         consensus.nBIP66Enabled = true;
         consensus.nSegwitEnabled = true;
         consensus.nCSVEnabled = true;
-        consensus.powLimit = uint256S("00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 2016 * 60; // 1.4 days
         consensus.nPowTargetSpacing = 1 * 60;
 		consensus.fPowAllowMinDifficultyBlocks = false;
@@ -164,11 +164,11 @@ public:
         nDefaultPort = 9787;
         nPruneAfterHeight = 100000;
                   
-        genesis = CreateGenesisBlock(1522754428, 25023712, 0x1f00ffff, 4, 5000 * COIN); 
+        genesis = CreateGenesisBlock(1522754428, 2083236893, 0x1d00ffff, 4, 5000 * COIN); 
 
         consensus.hashGenesisBlock = genesis.GetHash();        
-        //std::cout << consensus.hashGenesisBlock.GetHex() << "\n";
-        //std::cout << "Merkle: " << genesis.hashMerkleRoot.GetHex() << "\n";
+        std::cout << consensus.hashGenesisBlock.GetHex() << "\n";
+        std::cout << "Merkle: " << genesis.hashMerkleRoot.GetHex() << "\n";
 
         assert(consensus.hashGenesisBlock == uint256S("0xad653a2c33f3b97662aef7fc08d46cd58b899a1e49d3be18b9f69b00a13dddea"));
         assert(genesis.hashMerkleRoot == uint256S("0xea39896df8ef5e522ddd66f0798708d307d43269c61b3b2abe0177d52e4931fa"));
