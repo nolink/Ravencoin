@@ -164,7 +164,7 @@ public:
         nDefaultPort = 9787;
         nPruneAfterHeight = 100000;
                   
-        uint32_t nNonce = 1;
+        uint32_t nNonce = 230186942;
         while(true){
             genesis = CreateGenesisBlock(1522754428, nNonce, 0x1d00ffff, 4, 5000 * COIN); 
             bool fNegative;
