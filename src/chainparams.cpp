@@ -123,7 +123,7 @@ public:
         consensus.nBIP66Enabled = true;
         consensus.nSegwitEnabled = true;
         consensus.nCSVEnabled = true;
-        consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+        consensus.powLimit = uint256S("00ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 2016 * 60; // 1.4 days
         consensus.nPowTargetSpacing = 1 * 60;
 		consensus.fPowAllowMinDifficultyBlocks = false;
@@ -164,11 +164,11 @@ public:
         nDefaultPort = 9787;
         nPruneAfterHeight = 100000;
                   
-        genesis = CreateGenesisBlock(1522754428, 25023712, 0x1e00ffff, 4, 5000 * COIN); 
+        genesis = CreateGenesisBlock(1522754428, 25023712, 0x1f00ffff, 4, 5000 * COIN); 
 
         consensus.hashGenesisBlock = genesis.GetHash();        
-        //std::cout << consensus.hashGenesisBlock.GetHex() << "\n";
-        //std::cout << "Merkle: " << genesis.hashMerkleRoot.GetHex() << "\n";
+        std::cout << consensus.hashGenesisBlock.GetHex() << "\n";
+        std::cout << "Merkle: " << genesis.hashMerkleRoot.GetHex() << "\n";
 
         assert(consensus.hashGenesisBlock == uint256S("0xa54b29ead3cae35e6e5d330462cc25484402c444d0dc482ef508bb701f14ee3f"));
         assert(genesis.hashMerkleRoot == uint256S("0xea39896df8ef5e522ddd66f0798708d307d43269c61b3b2abe0177d52e4931fa"));
