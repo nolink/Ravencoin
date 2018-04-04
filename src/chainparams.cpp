@@ -181,7 +181,7 @@ public:
             }
 
             // Check proof of work matches claimed amount
-            if (UintToArith256(hash) > bnTarget)
+            if (UintToArith256(genesis.getHash()) > bnTarget)
               {
                 nNonce++;
                 continue;
