@@ -164,46 +164,46 @@ public:
         nDefaultPort = 9787;
         nPruneAfterHeight = 100000;
                   
-        uint32_t nNonce = 0;
-        while(true){
-            genesis = CreateGenesisBlock(1522848138 , nNonce, 0x1e00ffff, 4, 5000 * COIN); 
-            bool fNegative;
-            bool fOverflow;
-            arith_uint256 bnTarget;
+        // uint32_t nNonce = 0;
+        // while(true){
+        //     genesis = CreateGenesisBlock(1522848138 , nNonce, 0x1e00ffff, 4, 5000 * COIN); 
+        //     bool fNegative;
+        //     bool fOverflow;
+        //     arith_uint256 bnTarget;
 
-            bnTarget.SetCompact(genesis.nBits, &fNegative, &fOverflow);
+        //     bnTarget.SetCompact(genesis.nBits, &fNegative, &fOverflow);
 
-            // Check range
-            if (fNegative || bnTarget == 0 || fOverflow || bnTarget > UintToArith256(consensus.powLimit))
-            {
-                std::cout << "case 1: " << nNonce << "\n";
-                nNonce++;
-                continue;
-            }
+        //     // Check range
+        //     if (fNegative || bnTarget == 0 || fOverflow || bnTarget > UintToArith256(consensus.powLimit))
+        //     {
+        //         std::cout << "case 1: " << nNonce << "\n";
+        //         nNonce++;
+        //         continue;
+        //     }
 
-            // Check proof of work matches claimed amount
-            if (UintToArith256(genesis.GetHash()) > bnTarget)
-              {
-                std::cout << "case 2: " << nNonce << "\n";
-                nNonce++;
-                continue;
-              }
+        //     // Check proof of work matches claimed amount
+        //     if (UintToArith256(genesis.GetHash()) > bnTarget)
+        //       {
+        //         std::cout << "case 2: " << nNonce << "\n";
+        //         nNonce++;
+        //         continue;
+        //       }
 
             
-                std::cout << genesis.GetHash().GetHex() << "\n";
-                std::cout << "Merkle: " << genesis.hashMerkleRoot.GetHex() << "\n";
-                std::cout << "nNonce: " << nNonce << "\n";
-                break;
+        //         std::cout << genesis.GetHash().GetHex() << "\n";
+        //         std::cout << "Merkle: " << genesis.hashMerkleRoot.GetHex() << "\n";
+        //         std::cout << "nNonce: " << nNonce << "\n";
+        //         break;
             
             
-        }
-        //genesis = CreateGenesisBlock(1522848138, 2018464, 0x1e00ffff, 4, 5000 * COIN); 
+        // }
+        genesis = CreateGenesisBlock(1522848138, 55559514, 0x1e00ffff, 4, 5000 * COIN); 
 
         consensus.hashGenesisBlock = genesis.GetHash();        
         //std::cout << consensus.hashGenesisBlock.GetHex() << "\n";
         //std::cout << "Merkle: " << genesis.hashMerkleRoot.GetHex() << "\n";
 
-        assert(consensus.hashGenesisBlock == uint256S("0x000000aff22d422c4919298b5eb01f665230b1d4ebe6373bb95967bd569e35a0"));
+        assert(consensus.hashGenesisBlock == uint256S("0x0000005f4ca49c2510b9bef19aa0e15bb4deaf1ca49b21c5af7a79c2f95c790b"));
         assert(genesis.hashMerkleRoot == uint256S("0x28ff00a867739a352523808d301f504bc4547699398d70faf2266a8bae5f3516"));
 
         vSeeds.emplace_back("seed.carrot.org", false); 
