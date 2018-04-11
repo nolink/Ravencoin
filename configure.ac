@@ -303,9 +303,9 @@ AC_ARG_WITH([libs],
 
 AC_ARG_WITH([daemon],
   [AS_HELP_STRING([--with-daemon],
-  [build ravend daemon (default=yes)])],
-  [build_ravend=$withval],
-  [build_ravend=yes])
+  [build carrotd daemon (default=yes)])],
+  [build_carrotd=$withval],
+  [build_carrotd=yes])
 
 use_pkgconfig=yes
 case $host in
@@ -724,7 +724,7 @@ RAVEN_QT_INIT
 dnl sets $raven_enable_qt, $raven_enable_qt_test, $raven_enable_qt_dbus
 RAVEN_QT_CONFIGURE([$use_pkgconfig], [qt5])
 
-if test x$build_raven_utils$build_ravend$raven_enable_qt$use_tests$use_bench = xnonononono; then
+if test x$build_raven_utils$build_carrotd$raven_enable_qt$use_tests$use_bench = xnonononono; then
     use_boost=no
 else
     use_boost=yes
@@ -910,7 +910,7 @@ if test x$use_pkgconfig = xyes; then
       if test x$use_qr != xno; then
         RAVEN_QT_CHECK([PKG_CHECK_MODULES([QR], [libqrencode], [have_qrencode=yes], [have_qrencode=no])])
       fi
-      if test x$build_raven_utils$build_ravend$raven_enable_qt$use_tests != xnononono; then
+      if test x$build_raven_utils$build_carrotd$raven_enable_qt$use_tests != xnononono; then
         PKG_CHECK_MODULES([EVENT], [libevent],, [AC_MSG_ERROR(libevent not found.)])
         if test x$TARGET_OS != xwindows; then
           PKG_CHECK_MODULES([EVENT_PTHREADS], [libevent_pthreads],, [AC_MSG_ERROR(libevent_pthreads not found.)])
@@ -935,7 +935,7 @@ else
   AC_CHECK_HEADER([openssl/ssl.h],, AC_MSG_ERROR(libssl headers missing),)
   AC_CHECK_LIB([ssl],         [main],SSL_LIBS=-lssl, AC_MSG_ERROR(libssl missing))
 
-  if test x$build_raven_utils$build_ravend$raven_enable_qt$use_tests != xnononono; then
+  if test x$build_raven_utils$build_carrotd$raven_enable_qt$use_tests != xnononono; then
     AC_CHECK_HEADER([event2/event.h],, AC_MSG_ERROR(libevent headers missing),)
     AC_CHECK_LIB([event],[main],EVENT_LIBS=-levent,AC_MSG_ERROR(libevent missing))
     if test x$TARGET_OS != xwindows; then
@@ -984,7 +984,7 @@ dnl univalue check
 
 need_bundled_univalue=yes
 
-if test x$build_raven_utils$build_ravend$raven_enable_qt$use_tests$use_bench = xnonononono; then
+if test x$build_raven_utils$build_carrotd$raven_enable_qt$use_tests$use_bench = xnonononono; then
   need_bundled_univalue=no
 else
 
@@ -1030,9 +1030,9 @@ AC_SUBST(UNIVALUE_LIBS)
 
 RAVEN_QT_PATH_PROGS([PROTOC], [protoc],$protoc_bin_path)
 
-AC_MSG_CHECKING([whether to build ravend])
-AM_CONDITIONAL([BUILD_RAVEND], [test x$build_ravend = xyes])
-AC_MSG_RESULT($build_ravend)
+AC_MSG_CHECKING([whether to build carrotd])
+AM_CONDITIONAL([BUILD_RAVEND], [test x$build_carrotd = xyes])
+AC_MSG_RESULT($build_carrotd)
 
 AC_MSG_CHECKING([whether to build utils (raven-cli raven-tx)])
 AM_CONDITIONAL([BUILD_RAVEN_UTILS], [test x$build_raven_utils = xyes])
@@ -1162,7 +1162,7 @@ else
   AC_MSG_RESULT([no])
 fi
 
-if test x$build_raven_utils$build_raven_libs$build_ravend$raven_enable_qt$use_bench$use_tests = xnononononono; then
+if test x$build_raven_utils$build_raven_libs$build_carrotd$raven_enable_qt$use_bench$use_tests = xnononononono; then
   AC_MSG_ERROR([No targets! Please specify at least one of: --with-utils --with-libs --with-daemon --with-gui --enable-bench or --enable-tests])
 fi
 
