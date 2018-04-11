@@ -8,13 +8,13 @@ define(_CLIENT_VERSION_IS_RELEASE, true)
 define(_COPYRIGHT_YEAR, 2017)
 define(_COPYRIGHT_HOLDERS,[The %s developers])
 define(_COPYRIGHT_HOLDERS_SUBSTITUTION,[[Raven Core]])
-AC_INIT([CarrotCore],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION],[https://github.com/RavenProject/Ravencoin/issues],[raven],[https://ravencoin.org/])
+AC_INIT([CarrotCore],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION],[https://github.com/RavenProject/Ravencoin/issues],[carrot],[https://ravencoin.org/])
 AC_CONFIG_SRCDIR([src/validation.cpp])
 AC_CONFIG_HEADERS([src/config/raven-config.h])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([build-aux/m4])
 
-RAVEN_DAEMON_NAME=ravend
+RAVEN_DAEMON_NAME=carrotd
 RAVEN_GUI_NAME=raven-qt
 RAVEN_CLI_NAME=raven-cli
 RAVEN_TX_NAME=raven-tx
