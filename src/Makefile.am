@@ -418,7 +418,7 @@ ravend_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 ravend_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-ravend_SOURCES += ravend-res.rc
+ravend_SOURCES += carrotd-res.rc
 endif
 
 ravend_LDADD = \
@@ -438,13 +438,13 @@ ravend_LDADD = \
 ravend_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
 
 # raven-cli binary #
-raven_cli_SOURCES = raven-cli.cpp
+raven_cli_SOURCES = carrot-cli.cpp
 raven_cli_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES) $(EVENT_CFLAGS)
 raven_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 raven_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-raven_cli_SOURCES += raven-cli-res.rc
+raven_cli_SOURCES += carrot-cli-res.rc
 endif
 
 raven_cli_LDADD = \
@@ -457,13 +457,13 @@ raven_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
 
 # raven-tx binary #
-raven_tx_SOURCES = raven-tx.cpp
+raven_tx_SOURCES = carrot-tx.cpp
 raven_tx_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES)
 raven_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 raven_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-raven_tx_SOURCES += raven-tx-res.rc
+raven_tx_SOURCES += carrot-tx-res.rc
 endif
 
 raven_tx_LDADD = \
