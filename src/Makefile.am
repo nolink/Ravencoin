@@ -66,7 +66,7 @@ TESTS =
 BENCHMARKS =
 
 if BUILD_RAVEND
-  bin_PROGRAMS += carrotd
+  bin_PROGRAMS += ravend
 endif
 
 if BUILD_RAVEN_UTILS
@@ -412,13 +412,13 @@ nodist_libraven_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # ravend binary #
-ravend_SOURCES = carrotd.cpp
+ravend_SOURCES = ravend.cpp
 ravend_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES)
 ravend_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 ravend_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-ravend_SOURCES += carrotd-res.rc
+ravend_SOURCES += ravend-res.rc
 endif
 
 ravend_LDADD = \
