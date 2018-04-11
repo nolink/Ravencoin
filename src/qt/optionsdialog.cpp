@@ -74,8 +74,8 @@ OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
     /* Display elements init */
     QDir translations(":translations");
 
-    ui->ravenAtStartup->setToolTip(ui->ravenAtStartup->toolTip().arg(tr(PACKAGE_NAME)));
-    ui->ravenAtStartup->setText(ui->ravenAtStartup->text().arg(tr(PACKAGE_NAME)));
+    ui->carrotAtStartup->setToolTip(ui->carrotAtStartup->toolTip().arg(tr(PACKAGE_NAME)));
+    ui->carrotAtStartup->setText(ui->carrotAtStartup->text().arg(tr(PACKAGE_NAME)));
 
     ui->openCarrotConfButton->setToolTip(ui->openCarrotConfButton->toolTip().arg(tr(PACKAGE_NAME)));
 
@@ -173,7 +173,7 @@ void OptionsDialog::setModel(OptionsModel *_model)
 void OptionsDialog::setMapper()
 {
     /* Main */
-    mapper->addMapping(ui->ravenAtStartup, OptionsModel::StartAtStartup);
+    mapper->addMapping(ui->carrotAtStartup, OptionsModel::StartAtStartup);
     mapper->addMapping(ui->threadsScriptVerif, OptionsModel::ThreadsScriptVerif);
     mapper->addMapping(ui->databaseCache, OptionsModel::DatabaseCache);
 
