@@ -314,7 +314,7 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>carrotAmountField</class>
+   <class>RavenAmountField</class>
    <extends>QLineEdit</extends>
    <header>ravenamountfield.h</header>
    <container>1</container>
