@@ -1,5 +1,7 @@
 *.tar.gz
 
+
+*.exe
 src/raven
 src/ravend
 src/raven-cli
