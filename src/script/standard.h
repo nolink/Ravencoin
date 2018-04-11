@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2016 The Bitcoin Core developers
-// Copyright (c) 2017 The Raven Core developers
+// Copyright (c) 2017 The Carrot Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -149,7 +149,7 @@ bool ExtractDestination(const CScript& scriptPubKey, CTxDestination& addressRet)
 bool ExtractDestinations(const CScript& scriptPubKey, txnouttype& typeRet, std::vector<CTxDestination>& addressRet, int& nRequiredRet);
 
 /**
- * Generate a Raven scriptPubKey for the given CTxDestination. Returns a P2PKH
+ * Generate a Carrot scriptPubKey for the given CTxDestination. Returns a P2PKH
  * script for a CKeyID destination, a P2SH script for a CScriptID, and an empty
  * script for CNoDestination.
  */

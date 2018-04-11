@@ -1,5 +1,5 @@
 // Copyright (c) 2011-2016 The Bitcoin Core developers
-// Copyright (c) 2017 The Raven Core developers
+// Copyright (c) 2017 The Carrot Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -9,22 +9,22 @@
 
 #include <QStringList>
 
-RavenUnits::RavenUnits(QObject *parent):
+CarrotUnits::CarrotUnits(QObject *parent):
         QAbstractListModel(parent),
         unitlist(availableUnits())
 {
 }
 
-QList<RavenUnits::Unit> RavenUnits::availableUnits()
+QList<CarrotUnits::Unit> CarrotUnits::availableUnits()
 {
-    QList<RavenUnits::Unit> unitlist;
+    QList<CarrotUnits::Unit> unitlist;
     unitlist.append(RVN);
     unitlist.append(mRVN);
     unitlist.append(uRVN);
     return unitlist;
 }
 
-bool RavenUnits::valid(int unit)
+bool CarrotUnits::valid(int unit)
 {
     switch(unit)
     {
@@ -37,7 +37,7 @@ bool RavenUnits::valid(int unit)
     }
 }
 
-QString RavenUnits::name(int unit)
+QString CarrotUnits::name(int unit)
 {
     switch(unit)
     {
@@ -48,18 +48,18 @@ QString RavenUnits::name(int unit)
     }
 }
 
-QString RavenUnits::description(int unit)
+QString CarrotUnits::description(int unit)
 {
     switch(unit)
     {
-    case RVN: return QString("Ravens");
-    case mRVN: return QString("Milli-Ravens (1 / 1" THIN_SP_UTF8 "000)");
-    case uRVN: return QString("Micro-Ravens (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+    case RVN: return QString("Carrots");
+    case mRVN: return QString("Milli-Carrots (1 / 1" THIN_SP_UTF8 "000)");
+    case uRVN: return QString("Micro-Carrots (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
     default: return QString("???");
     }
 }
 
-qint64 RavenUnits::factor(int unit)
+qint64 CarrotUnits::factor(int unit)
 {
     switch(unit)
     {
@@ -70,7 +70,7 @@ qint64 RavenUnits::factor(int unit)
     }
 }
 
-int RavenUnits::decimals(int unit)
+int CarrotUnits::decimals(int unit)
 {
     switch(unit)
     {
@@ -81,7 +81,7 @@ int RavenUnits::decimals(int unit)
     }
 }
 
-QString RavenUnits::format(int unit, const CAmount& nIn, bool fPlus, SeparatorStyle separators)
+QString CarrotUnits::format(int unit, const CAmount& nIn, bool fPlus, SeparatorStyle separators)
 {
     // Note: not using straight sprintf here because we do NOT want
     // localized number formatting.
@@ -120,12 +120,12 @@ QString RavenUnits::format(int unit, const CAmount& nIn, bool fPlus, SeparatorSt
 // Please take care to use formatHtmlWithUnit instead, when
 // appropriate.
 
-QString RavenUnits::formatWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
+QString CarrotUnits::formatWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
 {
     return format(unit, amount, plussign, separators) + QString(" ") + name(unit);
 }
 
-QString RavenUnits::formatHtmlWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
+QString CarrotUnits::formatHtmlWithUnit(int unit, const CAmount& amount, bool plussign, SeparatorStyle separators)
 {
     QString str(formatWithUnit(unit, amount, plussign, separators));
     str.replace(QChar(THIN_SP_CP), QString(THIN_SP_HTML));
@@ -133,7 +133,7 @@ QString RavenUnits::formatHtmlWithUnit(int unit, const CAmount& amount, bool plu
 }
 
 
-bool RavenUnits::parse(int unit, const QString &value, CAmount *val_out)
+bool CarrotUnits::parse(int unit, const QString &value, CAmount *val_out)
 {
     if(!valid(unit) || value.isEmpty())
         return false; // Refuse to parse invalid unit or empty string
@@ -172,23 +172,23 @@ bool RavenUnits::parse(int unit, const QString &value, CAmount *val_out)
     return ok;
 }
 
-QString RavenUnits::getAmountColumnTitle(int unit)
+QString CarrotUnits::getAmountColumnTitle(int unit)
 {
     QString amountTitle = QObject::tr("Amount");
-    if (RavenUnits::valid(unit))
+    if (CarrotUnits::valid(unit))
     {
-        amountTitle += " ("+RavenUnits::name(unit) + ")";
+        amountTitle += " ("+CarrotUnits::name(unit) + ")";
     }
     return amountTitle;
 }
 
-int RavenUnits::rowCount(const QModelIndex &parent) const
+int CarrotUnits::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
     return unitlist.size();
 }
 
-QVariant RavenUnits::data(const QModelIndex &index, int role) const
+QVariant CarrotUnits::data(const QModelIndex &index, int role) const
 {
     int row = index.row();
     if(row >= 0 && row < unitlist.size())
@@ -208,7 +208,7 @@ QVariant RavenUnits::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
-CAmount RavenUnits::maxMoney()
+CAmount CarrotUnits::maxMoney()
 {
     return MAX_MONEY;
 }

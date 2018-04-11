@@ -1,5 +1,5 @@
 // Copyright (c) 2011-2015 The Bitcoin Core developers
-// Copyright (c) 2017 The Raven Core developers
+// Copyright (c) 2017 The Carrot Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -25,7 +25,7 @@ class AmountSpinBox: public QAbstractSpinBox
 public:
     explicit AmountSpinBox(QWidget *parent):
         QAbstractSpinBox(parent),
-        currentUnit(RavenUnits::RVN),
+        currentUnit(CarrotUnits::RVN),
         singleStep(100000) // satoshis
     {
         setAlignment(Qt::AlignRight);
@@ -49,7 +49,7 @@ public:
         CAmount val = parse(input, &valid);
         if(valid)
         {
-            input = RavenUnits::format(currentUnit, val, false, RavenUnits::separatorAlways);
+            input = CarrotUnits::format(currentUnit, val, false, CarrotUnits::separatorAlways);
             lineEdit()->setText(input);
         }
     }
@@ -61,7 +61,7 @@ public:
 
     void setValue(const CAmount& value)
     {
-        lineEdit()->setText(RavenUnits::format(currentUnit, value, false, RavenUnits::separatorAlways));
+        lineEdit()->setText(CarrotUnits::format(currentUnit, value, false, CarrotUnits::separatorAlways));
         Q_EMIT valueChanged();
     }
 
@@ -70,7 +70,7 @@ public:
         bool valid = false;
         CAmount val = value(&valid);
         val = val + steps * singleStep;
-        val = qMin(qMax(val, CAmount(0)), RavenUnits::maxMoney());
+        val = qMin(qMax(val, CAmount(0)), CarrotUnits::maxMoney());
         setValue(val);
     }
 
@@ -100,7 +100,7 @@ public:
 
             const QFontMetrics fm(fontMetrics());
             int h = lineEdit()->minimumSizeHint().height();
-            int w = fm.width(RavenUnits::format(RavenUnits::RVN, RavenUnits::maxMoney(), false, RavenUnits::separatorAlways));
+            int w = fm.width(CarrotUnits::format(CarrotUnits::RVN, CarrotUnits::maxMoney(), false, CarrotUnits::separatorAlways));
             w += 2; // cursor blinking space
 
             QStyleOptionSpinBox opt;
@@ -138,10 +138,10 @@ private:
     CAmount parse(const QString &text, bool *valid_out=0) const
     {
         CAmount val = 0;
-        bool valid = RavenUnits::parse(currentUnit, text, &val);
+        bool valid = CarrotUnits::parse(currentUnit, text, &val);
         if(valid)
         {
-            if(val < 0 || val > RavenUnits::maxMoney())
+            if(val < 0 || val > CarrotUnits::maxMoney())
                 valid = false;
         }
         if(valid_out)
@@ -179,7 +179,7 @@ protected:
         {
             if(val > 0)
                 rv |= StepDownEnabled;
-            if(val < RavenUnits::maxMoney())
+            if(val < CarrotUnits::maxMoney())
                 rv |= StepUpEnabled;
         }
         return rv;
@@ -191,7 +191,7 @@ Q_SIGNALS:
 
 #include "ravenamountfield.moc"
 
-RavenAmountField::RavenAmountField(QWidget *parent) :
+CarrotAmountField::CarrotAmountField(QWidget *parent) :
     QWidget(parent),
     amount(0)
 {
@@ -203,7 +203,7 @@ RavenAmountField::RavenAmountField(QWidget *parent) :
     QHBoxLayout *layout = new QHBoxLayout(this);
     layout->addWidget(amount);
     unit = new QValueComboBox(this);
-    unit->setModel(new RavenUnits(this));
+    unit->setModel(new CarrotUnits(this));
     layout->addWidget(unit);
     layout->addStretch(1);
     layout->setContentsMargins(0,0,0,0);
@@ -221,19 +221,19 @@ RavenAmountField::RavenAmountField(QWidget *parent) :
     unitChanged(unit->currentIndex());
 }
 
-void RavenAmountField::clear()
+void CarrotAmountField::clear()
 {
     amount->clear();
     unit->setCurrentIndex(0);
 }
 
-void RavenAmountField::setEnabled(bool fEnabled)
+void CarrotAmountField::setEnabled(bool fEnabled)
 {
     amount->setEnabled(fEnabled);
     unit->setEnabled(fEnabled);
 }
 
-bool RavenAmountField::validate()
+bool CarrotAmountField::validate()
 {
     bool valid = false;
     value(&valid);
@@ -241,7 +241,7 @@ bool RavenAmountField::validate()
     return valid;
 }
 
-void RavenAmountField::setValid(bool valid)
+void CarrotAmountField::setValid(bool valid)
 {
     if (valid)
         amount->setStyleSheet("");
@@ -249,7 +249,7 @@ void RavenAmountField::setValid(bool valid)
         amount->setStyleSheet(STYLE_INVALID);
 }
 
-bool RavenAmountField::eventFilter(QObject *object, QEvent *event)
+bool CarrotAmountField::eventFilter(QObject *object, QEvent *event)
 {
     if (event->type() == QEvent::FocusIn)
     {
@@ -259,45 +259,45 @@ bool RavenAmountField::eventFilter(QObject *object, QEvent *event)
     return QWidget::eventFilter(object, event);
 }
 
-QWidget *RavenAmountField::setupTabChain(QWidget *prev)
+QWidget *CarrotAmountField::setupTabChain(QWidget *prev)
 {
     QWidget::setTabOrder(prev, amount);
     QWidget::setTabOrder(amount, unit);
     return unit;
 }
 
-CAmount RavenAmountField::value(bool *valid_out) const
+CAmount CarrotAmountField::value(bool *valid_out) const
 {
     return amount->value(valid_out);
 }
 
-void RavenAmountField::setValue(const CAmount& value)
+void CarrotAmountField::setValue(const CAmount& value)
 {
     amount->setValue(value);
 }
 
-void RavenAmountField::setReadOnly(bool fReadOnly)
+void CarrotAmountField::setReadOnly(bool fReadOnly)
 {
     amount->setReadOnly(fReadOnly);
 }
 
-void RavenAmountField::unitChanged(int idx)
+void CarrotAmountField::unitChanged(int idx)
 {
     // Use description tooltip for current unit for the combobox
     unit->setToolTip(unit->itemData(idx, Qt::ToolTipRole).toString());
 
     // Determine new unit ID
-    int newUnit = unit->itemData(idx, RavenUnits::UnitRole).toInt();
+    int newUnit = unit->itemData(idx, CarrotUnits::UnitRole).toInt();
 
     amount->setDisplayUnit(newUnit);
 }
 
-void RavenAmountField::setDisplayUnit(int newUnit)
+void CarrotAmountField::setDisplayUnit(int newUnit)
 {
     unit->setValue(newUnit);
 }
 
-void RavenAmountField::setSingleStep(const CAmount& step)
+void CarrotAmountField::setSingleStep(const CAmount& step)
 {
     amount->setSingleStep(step);
 }

@@ -1,5 +1,5 @@
 // Copyright (c) 2010 Satoshi Nakamoto
-// Copyright (c) 2009-2016 The Raven Core developers
+// Copyright (c) 2009-2016 The Carrot Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -231,7 +231,7 @@ public:
         };
 
         chainTxData = ChainTxData{
-            // Update as we know more about the contents of the Raven chain
+            // Update as we know more about the contents of the Carrot chain
             1509572692, // * UNIX timestamp of last known number of transactions
             1,          // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the SetBestChain debug.log lines)
@@ -314,7 +314,7 @@ public:
         };
 
         chainTxData = ChainTxData{
-            // Update as we know more about the contents of the Raven chain
+            // Update as we know more about the contents of the Carrot chain
             1513705170, // * UNIX timestamp of last known number of transactions
             1,          // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the SetBestChain debug.log lines)

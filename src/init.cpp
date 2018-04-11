@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2016 The Bitcoin Core developers
-// Copyright (c) 2017 The Raven Core developers
+// Copyright (c) 2017 The Carrot Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -191,7 +191,7 @@ void Shutdown()
 #ifdef ENABLE_WALLET
     FlushWallets();
 #endif
-    GenerateRavens(false, 0, Params());
+    GenerateCarrots(false, 0, Params());
 
     MapPort(false);
 
@@ -515,7 +515,7 @@ std::string HelpMessage(HelpMessageMode mode)
 
 std::string LicenseInfo()
 {
-    const std::string URL_SOURCE_CODE = "<https://github.com/RavenProject/Ravencoin>";
+    const std::string URL_SOURCE_CODE = "<https://github.com/CarrotProject/Carrotcoin>";
     const std::string URL_WEBSITE = "<https://ravencoin.org>";
 
     return CopyrightHolders(strprintf(_("Copyright (C) %i-%i"), 2009, COPYRIGHT_YEAR) + " ") + "\n" +
@@ -690,7 +690,7 @@ void ThreadImport(std::vector<fs::path> vImportFiles)
 }
 
 /** Sanity checks
- *  Ensure that Raven is running in a usable environment with all
+ *  Ensure that Carrot is running in a usable environment with all
  *  necessary library support.
  */
 bool InitSanityCheck(void)
@@ -814,7 +814,7 @@ void InitLogging()
     fLogIPs = gArgs.GetBoolArg("-logips", DEFAULT_LOGIPS);
 
     LogPrintf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-    LogPrintf("Raven version %s\n", FormatFullVersion());
+    LogPrintf("Carrot version %s\n", FormatFullVersion());
 }
 
 namespace { // Variables internal to initialization process only
@@ -1155,7 +1155,7 @@ static bool LockDataDirectory(bool probeOnly)
 {
     std::string strDataDir = GetDataDir().string();
 
-    // Make sure only a single Raven process is using the data directory.
+    // Make sure only a single Carrot process is using the data directory.
     fs::path pathLockFile = GetDataDir() / ".lock";
     FILE* file = fsbridge::fopen(pathLockFile, "a"); // empty lock file; created if it doesn't exist.
     if (file) fclose(file);
@@ -1267,7 +1267,7 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
 
     bool fGenerate = gArgs.GetBoolArg("-regtest", false) ? false : DEFAULT_GENERATE;
     // Generate coins in the background
-    GenerateRavens(fGenerate, gArgs.GetArg("-genproclimit", DEFAULT_GENERATE_THREADS), chainparams);
+    GenerateCarrots(fGenerate, gArgs.GetArg("-genproclimit", DEFAULT_GENERATE_THREADS), chainparams);
 
     // ********************************************************* Step 6: network initialization
     // Note that we absolutely cannot open any actual connections

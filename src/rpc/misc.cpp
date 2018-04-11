@@ -1,6 +1,6 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2016 The Bitcoin Core developers
-// Copyright (c) 2017 The Raven Core developers
+// Copyright (c) 2017 The Carrot Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -322,7 +322,7 @@ CScript _createmultisig_redeemScript(CWallet * const pwallet, const UniValue& pa
     {
         const std::string& ks = keys[i].get_str();
 #ifdef ENABLE_WALLET
-        // Case 1: Raven address and we have full public key:
+        // Case 1: Carrot address and we have full public key:
         CTxDestination dest = DecodeDestination(ks);
         if (pwallet && IsValidDestination(dest)) {
             const CKeyID *keyID = boost::get<CKeyID>(&dest);
@@ -489,7 +489,7 @@ UniValue signmessagewithprivkey(const JSONRPCRequest& request)
     std::string strPrivkey = request.params[0].get_str();
     std::string strMessage = request.params[1].get_str();
 
-    CRavenSecret vchSecret;
+    CCarrotSecret vchSecret;
     bool fGood = vchSecret.SetString(strPrivkey);
     if (!fGood)
         throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid private key");

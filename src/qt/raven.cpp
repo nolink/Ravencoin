@@ -1,5 +1,5 @@
 // Copyright (c) 2011-2016 The Bitcoin Core developers
-// Copyright (c) 2017 The Raven Core developers
+// Copyright (c) 2017 The Carrot Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -171,14 +171,14 @@ void DebugMessageHandler(QtMsgType type, const QMessageLogContext& context, cons
 }
 #endif
 
-/** Class encapsulating Raven Core startup and shutdown.
+/** Class encapsulating Carrot Core startup and shutdown.
  * Allows running startup and shutdown in a different thread from the UI thread.
  */
-class RavenCore: public QObject
+class CarrotCore: public QObject
 {
     Q_OBJECT
 public:
-    explicit RavenCore();
+    explicit CarrotCore();
     /** Basic initialization, before starting initialization/shutdown thread.
      * Return true on success.
      */
@@ -201,13 +201,13 @@ private:
     void handleRunawayException(const std::exception *e);
 };
 
-/** Main Raven application object */
-class RavenApplication: public QApplication
+/** Main Carrot application object */
+class CarrotApplication: public QApplication
 {
     Q_OBJECT
 public:
-    explicit RavenApplication(int &argc, char **argv);
-    ~RavenApplication();
+    explicit CarrotApplication(int &argc, char **argv);
+    ~CarrotApplication();
 
 #ifdef ENABLE_WALLET
     /// Create payment server
@@ -230,7 +230,7 @@ public:
     /// Get process return value
     int getReturnValue() const { return returnValue; }
 
-    /// Get window identifier of QMainWindow (RavenGUI)
+    /// Get window identifier of QMainWindow (CarrotGUI)
     WId getMainWinId() const;
 
 public Q_SLOTS:
@@ -249,7 +249,7 @@ private:
     QThread *coreThread;
     OptionsModel *optionsModel;
     ClientModel *clientModel;
-    RavenGUI *window;
+    CarrotGUI *window;
     QTimer *pollShutdownTimer;
 #ifdef ENABLE_WALLET
     PaymentServer* paymentServer;
@@ -264,18 +264,18 @@ private:
 
 #include "raven.moc"
 
-RavenCore::RavenCore():
+CarrotCore::CarrotCore():
     QObject()
 {
 }
 
-void RavenCore::handleRunawayException(const std::exception *e)
+void CarrotCore::handleRunawayException(const std::exception *e)
 {
     PrintExceptionContinue(e, "Runaway exception");
     Q_EMIT runawayException(QString::fromStdString(GetWarnings("gui")));
 }
 
-bool RavenCore::baseInitialize()
+bool CarrotCore::baseInitialize()
 {
     if (!AppInitBasicSetup())
     {
@@ -296,7 +296,7 @@ bool RavenCore::baseInitialize()
     return true;
 }
 
-void RavenCore::initialize()
+void CarrotCore::initialize()
 {
     try
     {
@@ -310,7 +310,7 @@ void RavenCore::initialize()
     }
 }
 
-void RavenCore::shutdown()
+void CarrotCore::shutdown()
 {
     try
     {
@@ -327,7 +327,7 @@ void RavenCore::shutdown()
     }
 }
 
-RavenApplication::RavenApplication(int &argc, char **argv):
+CarrotApplication::CarrotApplication(int &argc, char **argv):
     QApplication(argc, argv),
     coreThread(0),
     optionsModel(0),
@@ -343,17 +343,17 @@ RavenApplication::RavenApplication(int &argc, char **argv):
     setQuitOnLastWindowClosed(false);
 
     // UI per-platform customization
-    // This must be done inside the RavenApplication constructor, or after it, because
+    // This must be done inside the CarrotApplication constructor, or after it, because
     // PlatformStyle::instantiate requires a QApplication
     std::string platformName;
-    platformName = gArgs.GetArg("-uiplatform", RavenGUI::DEFAULT_UIPLATFORM);
+    platformName = gArgs.GetArg("-uiplatform", CarrotGUI::DEFAULT_UIPLATFORM);
     platformStyle = PlatformStyle::instantiate(QString::fromStdString(platformName));
     if (!platformStyle) // Fall back to "other" if specified name not found
         platformStyle = PlatformStyle::instantiate("other");
     assert(platformStyle);
 }
 
-RavenApplication::~RavenApplication()
+CarrotApplication::~CarrotApplication()
 {
     if(coreThread)
     {
@@ -376,27 +376,27 @@ RavenApplication::~RavenApplication()
 }
 
 #ifdef ENABLE_WALLET
-void RavenApplication::createPaymentServer()
+void CarrotApplication::createPaymentServer()
 {
     paymentServer = new PaymentServer(this);
 }
 #endif
 
-void RavenApplication::createOptionsModel(bool resetSettings)
+void CarrotApplication::createOptionsModel(bool resetSettings)
 {
     optionsModel = new OptionsModel(nullptr, resetSettings);
 }
 
-void RavenApplication::createWindow(const NetworkStyle *networkStyle)
+void CarrotApplication::createWindow(const NetworkStyle *networkStyle)
 {
-    window = new RavenGUI(platformStyle, networkStyle, 0);
+    window = new CarrotGUI(platformStyle, networkStyle, 0);
 
     pollShutdownTimer = new QTimer(window);
     connect(pollShutdownTimer, SIGNAL(timeout()), window, SLOT(detectShutdown()));
     pollShutdownTimer->start(200);
 }
 
-void RavenApplication::createSplashScreen(const NetworkStyle *networkStyle)
+void CarrotApplication::createSplashScreen(const NetworkStyle *networkStyle)
 {
     SplashScreen *splash = new SplashScreen(0, networkStyle);
     // We don't hold a direct pointer to the splash screen after creation, but the splash
@@ -406,12 +406,12 @@ void RavenApplication::createSplashScreen(const NetworkStyle *networkStyle)
     connect(this, SIGNAL(requestedShutdown()), splash, SLOT(close()));
 }
 
-void RavenApplication::startThread()
+void CarrotApplication::startThread()
 {
     if(coreThread)
         return;
     coreThread = new QThread(this);
-    RavenCore *executor = new RavenCore();
+    CarrotCore *executor = new CarrotCore();
     executor->moveToThread(coreThread);
 
     /*  communication to and from thread */
@@ -427,20 +427,20 @@ void RavenApplication::startThread()
     coreThread->start();
 }
 
-void RavenApplication::parameterSetup()
+void CarrotApplication::parameterSetup()
 {
     InitLogging();
     InitParameterInteraction();
 }
 
-void RavenApplication::requestInitialize()
+void CarrotApplication::requestInitialize()
 {
     qDebug() << __func__ << ": Requesting initialize";
     startThread();
     Q_EMIT requestedInitialize();
 }
 
-void RavenApplication::requestShutdown()
+void CarrotApplication::requestShutdown()
 {
     // Show a simple window indicating shutdown status
     // Do this first as some of the steps may take some time below,
@@ -467,7 +467,7 @@ void RavenApplication::requestShutdown()
     Q_EMIT requestedShutdown();
 }
 
-void RavenApplication::initializeResult(bool success)
+void CarrotApplication::initializeResult(bool success)
 {
     qDebug() << __func__ << ": Initialization result: " << success;
     // Set exit result.
@@ -490,8 +490,8 @@ void RavenApplication::initializeResult(bool success)
         {
             walletModel = new WalletModel(platformStyle, vpwallets[0], optionsModel);
 
-            window->addWallet(RavenGUI::DEFAULT_WALLET, walletModel);
-            window->setCurrentWallet(RavenGUI::DEFAULT_WALLET);
+            window->addWallet(CarrotGUI::DEFAULT_WALLET, walletModel);
+            window->setCurrentWallet(CarrotGUI::DEFAULT_WALLET);
 
             connect(walletModel, SIGNAL(coinsSent(CWallet*,SendCoinsRecipient,QByteArray)),
                              paymentServer, SLOT(fetchPaymentACK(CWallet*,const SendCoinsRecipient&,QByteArray)));
@@ -525,18 +525,18 @@ void RavenApplication::initializeResult(bool success)
     }
 }
 
-void RavenApplication::shutdownResult()
+void CarrotApplication::shutdownResult()
 {
     quit(); // Exit main loop after shutdown finished
 }
 
-void RavenApplication::handleRunawayException(const QString &message)
+void CarrotApplication::handleRunawayException(const QString &message)
 {
-    QMessageBox::critical(0, "Runaway exception", RavenGUI::tr("A fatal error occurred. Raven can no longer continue safely and will quit.") + QString("\n\n") + message);
+    QMessageBox::critical(0, "Runaway exception", CarrotGUI::tr("A fatal error occurred. Carrot can no longer continue safely and will quit.") + QString("\n\n") + message);
     ::exit(EXIT_FAILURE);
 }
 
-WId RavenApplication::getMainWinId() const
+WId CarrotApplication::getMainWinId() const
 {
     if (!window)
         return 0;
@@ -565,7 +565,7 @@ int main(int argc, char *argv[])
     Q_INIT_RESOURCE(raven);
     Q_INIT_RESOURCE(raven_locale);
 
-    RavenApplication app(argc, argv);
+    CarrotApplication app(argc, argv);
 #if QT_VERSION > 0x050100
     // Generate high-dpi pixmaps
     QApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
@@ -707,7 +707,7 @@ int main(int argc, char *argv[])
         // Perform base initialization before spinning up initialization/shutdown thread
         // This is acceptable because this function only contains steps that are quick to execute,
         // so the GUI thread won't be held up.
-        if (RavenCore::baseInitialize()) {
+        if (CarrotCore::baseInitialize()) {
             app.requestInitialize();
 #if defined(Q_OS_WIN) && QT_VERSION >= 0x050000
             WinShutdownMonitor::registerShutdownBlockReason(QObject::tr("%1 didn't yet exit safely...").arg(QObject::tr(PACKAGE_NAME)), (HWND)app.getMainWinId());
