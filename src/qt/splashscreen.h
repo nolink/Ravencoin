@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RAVEN_QT_SPLASHSCREEN_H
-#define RAVEN_QT_SPLASHSCREEN_H
+#ifndef CARROT_QT_SPLASHSCREEN_H
+#define CARROT_QT_SPLASHSCREEN_H
 
 #include <functional>
 #include <QSplashScreen>
@@ -56,4 +56,4 @@ private:
     QList<CWallet*> connectedWallets;
 };
 
-#endif // RAVEN_QT_SPLASHSCREEN_H
+#endif // CARROT_QT_SPLASHSCREEN_H

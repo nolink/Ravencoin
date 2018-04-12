@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RAVEN_QT_OPTIONSMODEL_H
-#define RAVEN_QT_OPTIONSMODEL_H
+#ifndef CARROT_QT_OPTIONSMODEL_H
+#define CARROT_QT_OPTIONSMODEL_H
 
 #include "amount.h"
 
@@ -96,4 +96,4 @@ Q_SIGNALS:
     void hideTrayIconChanged(bool);
 };
 
-#endif // RAVEN_QT_OPTIONSMODEL_H
+#endif // CARROT_QT_OPTIONSMODEL_H

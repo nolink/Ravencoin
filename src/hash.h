@@ -4,8 +4,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RAVEN_HASH_H
-#define RAVEN_HASH_H
+#ifndef CARROT_HASH_H
+#define CARROT_HASH_H
 #include <iostream>
 #include <chrono>
 #include "crypto/ripemd160.h"

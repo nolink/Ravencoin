@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RAVEN_QT_TRANSACTIONTABLEMODEL_H
-#define RAVEN_QT_TRANSACTIONTABLEMODEL_H
+#ifndef CARROT_QT_TRANSACTIONTABLEMODEL_H
+#define CARROT_QT_TRANSACTIONTABLEMODEL_H
 
 #include "ravenunits.h"
 
@@ -118,4 +118,4 @@ public Q_SLOTS:
     friend class TransactionTablePriv;
 };
 
-#endif // RAVEN_QT_TRANSACTIONTABLEMODEL_H
+#endif // CARROT_QT_TRANSACTIONTABLEMODEL_H

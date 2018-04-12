@@ -4,8 +4,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RAVEN_SCRIPT_SCRIPT_H
-#define RAVEN_SCRIPT_SCRIPT_H
+#ifndef CARROT_SCRIPT_SCRIPT_H
+#define CARROT_SCRIPT_SCRIPT_H
 
 #include "crypto/common.h"
 #include "prevector.h"
@@ -695,4 +695,4 @@ public:
     virtual ~CReserveScript() {}
 };
 
-#endif // RAVEN_SCRIPT_SCRIPT_H
+#endif // CARROT_SCRIPT_SCRIPT_H

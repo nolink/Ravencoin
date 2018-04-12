@@ -4,8 +4,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RAVEN_INIT_H
-#define RAVEN_INIT_H
+#ifndef CARROT_INIT_H
+#define CARROT_INIT_H
 
 #include <string>
 
@@ -68,4 +68,4 @@ std::string HelpMessage(HelpMessageMode mode);
 /** Returns licensing information (for -version) */
 std::string LicenseInfo();
 
-#endif // RAVEN_INIT_H
+#endif // CARROT_INIT_H

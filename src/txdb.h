@@ -4,8 +4,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RAVEN_TXDB_H
-#define RAVEN_TXDB_H
+#ifndef CARROT_TXDB_H
+#define CARROT_TXDB_H
 
 #include "coins.h"
 #include "dbwrapper.h"
@@ -127,4 +127,4 @@ public:
     bool LoadBlockIndexGuts(const Consensus::Params& consensusParams, std::function<CBlockIndex*(const uint256&)> insertBlockIndex);
 };
 
-#endif // RAVEN_TXDB_H
+#endif // CARROT_TXDB_H

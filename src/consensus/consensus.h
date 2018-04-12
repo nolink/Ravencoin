@@ -4,8 +4,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RAVEN_CONSENSUS_CONSENSUS_H
-#define RAVEN_CONSENSUS_CONSENSUS_H
+#ifndef CARROT_CONSENSUS_CONSENSUS_H
+#define CARROT_CONSENSUS_CONSENSUS_H
 
 #include <stdlib.h>
 #include <stdint.h>
@@ -33,4 +33,4 @@ enum {
     LOCKTIME_MEDIAN_TIME_PAST = (1 << 1),
 };
 
-#endif // RAVEN_CONSENSUS_CONSENSUS_H
+#endif // CARROT_CONSENSUS_CONSENSUS_H

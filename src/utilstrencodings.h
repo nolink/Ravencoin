@@ -7,8 +7,8 @@
 /**
  * Utilities for converting data from/to strings.
  */
-#ifndef RAVEN_UTILSTRENCODINGS_H
-#define RAVEN_UTILSTRENCODINGS_H
+#ifndef CARROT_UTILSTRENCODINGS_H
+#define CARROT_UTILSTRENCODINGS_H
 
 #include <stdint.h>
 #include <string>
@@ -174,4 +174,4 @@ bool ConvertBits(O& out, I it, I end) {
     return true;
 }
 
-#endif // RAVEN_UTILSTRENCODINGS_H
+#endif // CARROT_UTILSTRENCODINGS_H

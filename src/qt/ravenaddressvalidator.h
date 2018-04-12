@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RAVEN_QT_RAVENADDRESSVALIDATOR_H
-#define RAVEN_QT_RAVENADDRESSVALIDATOR_H
+#ifndef CARROT_QT_RAVENADDRESSVALIDATOR_H
+#define CARROT_QT_RAVENADDRESSVALIDATOR_H
 
 #include <QValidator>
 
@@ -33,4 +33,4 @@ public:
     State validate(QString &input, int &pos) const;
 };
 
-#endif // RAVEN_QT_RAVENADDRESSVALIDATOR_H
+#endif // CARROT_QT_RAVENADDRESSVALIDATOR_H

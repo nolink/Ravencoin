@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RAVEN_QT_GUICONSTANTS_H
-#define RAVEN_QT_GUICONSTANTS_H
+#ifndef CARROT_QT_GUICONSTANTS_H
+#define CARROT_QT_GUICONSTANTS_H
 
 /* Milliseconds between model updates */
 static const int MODEL_UPDATE_DELAY = 250;
@@ -54,4 +54,4 @@ static const int MAX_URI_LENGTH = 255;
 #define QAPP_APP_NAME_DEFAULT "Carrot-Qt"
 #define QAPP_APP_NAME_TESTNET "Carrot-Qt-testnet"
 
-#endif // RAVEN_QT_GUICONSTANTS_H
+#endif // CARROT_QT_GUICONSTANTS_H

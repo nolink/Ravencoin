@@ -8,8 +8,8 @@
 #error This header can only be compiled as C++.
 #endif
 
-#ifndef RAVEN_PROTOCOL_H
-#define RAVEN_PROTOCOL_H
+#ifndef CARROT_PROTOCOL_H
+#define CARROT_PROTOCOL_H
 
 #include "netaddress.h"
 #include "serialize.h"
@@ -399,4 +399,4 @@ public:
     uint256 hash;
 };
 
-#endif // RAVEN_PROTOCOL_H
+#endif // CARROT_PROTOCOL_H

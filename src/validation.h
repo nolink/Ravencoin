@@ -4,8 +4,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RAVEN_VALIDATION_H
-#define RAVEN_VALIDATION_H
+#ifndef CARROT_VALIDATION_H
+#define CARROT_VALIDATION_H
 
 #if defined(HAVE_CONFIG_H)
 #include "config/raven-config.h"
@@ -483,4 +483,4 @@ bool DumpMempool();
 /** Load the mempool from disk. */
 bool LoadMempool();
 
-#endif // RAVEN_VALIDATION_H
+#endif // CARROT_VALIDATION_H

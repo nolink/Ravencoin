@@ -4,8 +4,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RAVEN_RAVENCONSENSUS_H
-#define RAVEN_RAVENCONSENSUS_H
+#ifndef CARROT_RAVENCONSENSUS_H
+#define CARROT_RAVENCONSENSUS_H
 
 #include <stdint.h>
 
@@ -34,7 +34,7 @@
 extern "C" {
 #endif
 
-#define RAVENCONSENSUS_API_VER 1
+#define CARROTCONSENSUS_API_VER 1
 
 typedef enum ravenconsensus_error_t
 {
@@ -81,4 +81,4 @@ EXPORT_SYMBOL unsigned int ravenconsensus_version();
 
 #undef EXPORT_SYMBOL
 
-#endif // RAVEN_RAVENCONSENSUS_H
+#endif // CARROT_RAVENCONSENSUS_H

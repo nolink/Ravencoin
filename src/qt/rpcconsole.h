@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RAVEN_QT_RPCCONSOLE_H
-#define RAVEN_QT_RPCCONSOLE_H
+#ifndef CARROT_QT_RPCCONSOLE_H
+#define CARROT_QT_RPCCONSOLE_H
 
 #include "guiutil.h"
 #include "peertablemodel.h"
@@ -157,4 +157,4 @@ private:
     void updateNetworkState();
 };
 
-#endif // RAVEN_QT_RPCCONSOLE_H
+#endif // CARROT_QT_RPCCONSOLE_H

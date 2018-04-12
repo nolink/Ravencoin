@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef RAVEN_RPC_BLOCKCHAIN_H
-#define RAVEN_RPC_BLOCKCHAIN_H
+#ifndef CARROT_RPC_BLOCKCHAIN_H
+#define CARROT_RPC_BLOCKCHAIN_H
 
 class CBlock;
 class CBlockIndex;

@@ -8,8 +8,8 @@
  * Server/client environment: argument handling, config file parsing,
  * logging, thread wrappers, startup time
  */
-#ifndef RAVEN_UTIL_H
-#define RAVEN_UTIL_H
+#ifndef CARROT_UTIL_H
+#define CARROT_UTIL_H
 
 #if defined(HAVE_CONFIG_H)
 #include "config/raven-config.h"
@@ -329,4 +329,4 @@ std::string CopyrightHolders(const std::string& strPrefix);
 
 void SetThreadPriority(int nPriority);
 
-#endif // RAVEN_UTIL_H
+#endif // CARROT_UTIL_H
