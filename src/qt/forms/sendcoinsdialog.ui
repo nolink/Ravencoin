@@ -856,7 +856,7 @@
                   </widget>
                  </item>
                  <item>
-                  <widget class="RavenAmountField" name="customFee"/>
+                  <widget class="CarrotAmountField" name="customFee"/>
                  </item>
                  <item>
                   <spacer name="horizontalSpacer_6">
@@ -1267,7 +1267,7 @@
    <header>qvalidatedlineedit.h</header>
   </customwidget>
   <customwidget>
-   <class>RavenAmountField</class>
+   <class>CarrotAmountField</class>
    <extends>QLineEdit</extends>
    <header>ravenamountfield.h</header>
    <container>1</container>
