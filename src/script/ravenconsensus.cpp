@@ -126,5 +126,5 @@ int ravenconsensus_verify_script(const unsigned char *scriptPubKey, unsigned int
 unsigned int ravenconsensus_version()
 {
     // Just use the API version for now
-    return RAVENCONSENSUS_API_VER;
+    return CARROTCONSENSUS_API_VER;
 }
