@@ -115,7 +115,7 @@
          </widget>
         </item>
         <item row="5" column="2">
-         <widget class="RavenAmountField" name="reqAmount">
+         <widget class="CarrotAmountField" name="reqAmount">
           <property name="minimumSize">
            <size>
             <width>80</width>
@@ -314,7 +314,7 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>RavenAmountField</class>
+   <class>CarrotAmountField</class>
    <extends>QLineEdit</extends>
    <header>ravenamountfield.h</header>
    <container>1</container>
