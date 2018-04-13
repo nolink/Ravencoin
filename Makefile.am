@@ -15,7 +15,7 @@ export PYTHONPATH
 
 if BUILD_RAVEN_LIBS
 pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = libravenconsensus.pc
+pkgconfig_DATA = libcarrotconsensus.pc
 endif
 
 RAVEND_BIN=$(top_builddir)/src/$(RAVEN_DAEMON_NAME)$(EXEEXT)

@@ -113,5 +113,5 @@ test/cache/*
 
 /doc/doxygen/
 
-libravenconsensus.pc
+libcarrotconsensus.pc
 contrib/devtools/split-debug.sh
