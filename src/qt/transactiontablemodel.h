@@ -6,7 +6,7 @@
 #ifndef CARROT_QT_TRANSACTIONTABLEMODEL_H
 #define CARROT_QT_TRANSACTIONTABLEMODEL_H
 
-#include "ravenunits.h"
+#include "carrotunits.h"
 
 #include <QAbstractTableModel>
 #include <QStringList>

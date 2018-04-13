@@ -122,7 +122,7 @@ QT_MOC_CPP = \
   qt/moc_ravenaddressvalidator.cpp \
   qt/moc_carrotamountfield.cpp \
   qt/moc_ravengui.cpp \
-  qt/moc_ravenunits.cpp \
+  qt/moc_carrotunits.cpp \
   qt/moc_callback.cpp \
   qt/moc_clientmodel.cpp \
   qt/moc_coincontroldialog.cpp \
@@ -191,7 +191,7 @@ RAVEN_QT_H = \
   qt/ravenaddressvalidator.h \
   qt/carrotamountfield.h \
   qt/ravengui.h \
-  qt/ravenunits.h \
+  qt/carrotunits.h \
   qt/callback.h \
   qt/clientmodel.h \
   qt/coincontroldialog.h \
@@ -300,7 +300,7 @@ RAVEN_QT_BASE_CPP = \
   qt/ravenaddressvalidator.cpp \
   qt/carrotamountfield.cpp \
   qt/ravengui.cpp \
-  qt/ravenunits.cpp \
+  qt/carrotunits.cpp \
   qt/clientmodel.cpp \
   qt/csvmodelwriter.cpp \
   qt/guiutil.cpp \

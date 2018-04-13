@@ -6,7 +6,7 @@
 #include "receiverequestdialog.h"
 #include "ui_receiverequestdialog.h"
 
-#include "ravenunits.h"
+#include "carrotunits.h"
 #include "guiconstants.h"
 #include "guiutil.h"
 #include "optionsmodel.h"

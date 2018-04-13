@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef CARROT_QT_RAVENUNITS_H
-#define CARROT_QT_RAVENUNITS_H
+#ifndef CARROT_QT_CARROTUNITS_H
+#define CARROT_QT_CARROTUNITS_H
 
 #include "amount.h"
 
@@ -126,4 +126,4 @@ private:
 };
 typedef CarrotUnits::Unit CarrotUnit;
 
-#endif // CARROT_QT_RAVENUNITS_H
+#endif // CARROT_QT_CARROTUNITS_H

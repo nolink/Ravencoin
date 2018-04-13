@@ -5,7 +5,7 @@
 
 #include "carrotamountfield.h"
 
-#include "ravenunits.h"
+#include "carrotunits.h"
 #include "guiconstants.h"
 #include "qvaluecombobox.h"
 

@@ -10,7 +10,7 @@
 #include "optionsdialog.h"
 #include "ui_optionsdialog.h"
 
-#include "ravenunits.h"
+#include "carrotunits.h"
 #include "guiutil.h"
 #include "optionsmodel.h"
 
