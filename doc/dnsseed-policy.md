@@ -44,11 +44,11 @@ related to the DNS seed operation.
 If these expectations cannot be satisfied the operator should
 discontinue providing services and contact the active Raven
 Core development team as well as posting on
-[raven-dev](https://lists.linuxfoundation.org/mailman/listinfo/raven-dev).
+[carrot-dev](https://lists.linuxfoundation.org/mailman/listinfo/carrot-dev).
 
 Behavior outside of these expectations may be reasonable in some
 situations but should be discussed in public in advance.
 
 See also
 ----------
-- [raven-seeder](https://github.com/sipa/raven-seeder) is a reference implementation of a DNS seed.
+- [carrot-seeder](https://github.com/sipa/carrot-seeder) is a reference implementation of a DNS seed.

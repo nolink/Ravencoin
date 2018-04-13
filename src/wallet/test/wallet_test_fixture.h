@@ -6,7 +6,7 @@
 #ifndef CARROT_WALLET_TEST_FIXTURE_H
 #define CARROT_WALLET_TEST_FIXTURE_H
 
-#include "test/test_raven.h"
+#include "test/test_carrot.h"
 
 /** Testing setup and teardown for wallet.
  */

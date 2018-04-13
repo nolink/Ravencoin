@@ -214,12 +214,12 @@
         <translation>&amp;Ajutor</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and raven: URIs)</source>
-        <translation>Cerere plată (generează coduri QR și raven: URIs)</translation>
+        <source>Request payments (generates QR codes and carrot: URIs)</source>
+        <translation>Cerere plată (generează coduri QR și carrot: URIs)</translation>
     </message>
     <message>
-        <source>Open a raven: URI or payment request</source>
-        <translation>Deschide un raven: URI sau cerere de plată</translation>
+        <source>Open a carrot: URI or payment request</source>
+        <translation>Deschide un carrot: URI sau cerere de plată</translation>
     </message>
     <message>
         <source>%1 behind</source>
@@ -746,7 +746,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>raven-core</name>
+    <name>carrot-core</name>
     <message>
         <source>CarrotCore</source>
         <translation>CarrotCore</translation>

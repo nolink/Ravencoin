@@ -28,12 +28,12 @@ The interface is defined in the C header `carrotconsensus.h` located in  `src/sc
 
 ##### Script Flags
 - `carrotconsensus_SCRIPT_FLAGS_VERIFY_NONE`
-- `carrotconsensus_SCRIPT_FLAGS_VERIFY_P2SH` - Evaluate P2SH ([BIP16](https://github.com/raven/bips/blob/master/bip-0016.mediawiki)) subscripts
-- `carrotconsensus_SCRIPT_FLAGS_VERIFY_DERSIG` - Enforce strict DER ([BIP66](https://github.com/raven/bips/blob/master/bip-0066.mediawiki)) compliance
-- `carrotconsensus_SCRIPT_FLAGS_VERIFY_NULLDUMMY` - Enforce NULLDUMMY ([BIP147](https://github.com/raven/bips/blob/master/bip-0147.mediawiki))
-- `carrotconsensus_SCRIPT_FLAGS_VERIFY_CHECKLOCKTIMEVERIFY` - Enable CHECKLOCKTIMEVERIFY ([BIP65](https://github.com/raven/bips/blob/master/bip-0065.mediawiki))
-- `carrotconsensus_SCRIPT_FLAGS_VERIFY_CHECKSEQUENCEVERIFY` - Enable CHECKSEQUENCEVERIFY ([BIP112](https://github.com/raven/bips/blob/master/bip-0112.mediawiki))
-- `carrotconsensus_SCRIPT_FLAGS_VERIFY_WITNESS` - Enable WITNESS ([BIP141](https://github.com/raven/bips/blob/master/bip-0141.mediawiki))
+- `carrotconsensus_SCRIPT_FLAGS_VERIFY_P2SH` - Evaluate P2SH ([BIP16](https://github.com/carrot/bips/blob/master/bip-0016.mediawiki)) subscripts
+- `carrotconsensus_SCRIPT_FLAGS_VERIFY_DERSIG` - Enforce strict DER ([BIP66](https://github.com/carrot/bips/blob/master/bip-0066.mediawiki)) compliance
+- `carrotconsensus_SCRIPT_FLAGS_VERIFY_NULLDUMMY` - Enforce NULLDUMMY ([BIP147](https://github.com/carrot/bips/blob/master/bip-0147.mediawiki))
+- `carrotconsensus_SCRIPT_FLAGS_VERIFY_CHECKLOCKTIMEVERIFY` - Enable CHECKLOCKTIMEVERIFY ([BIP65](https://github.com/carrot/bips/blob/master/bip-0065.mediawiki))
+- `carrotconsensus_SCRIPT_FLAGS_VERIFY_CHECKSEQUENCEVERIFY` - Enable CHECKSEQUENCEVERIFY ([BIP112](https://github.com/carrot/bips/blob/master/bip-0112.mediawiki))
+- `carrotconsensus_SCRIPT_FLAGS_VERIFY_WITNESS` - Enable WITNESS ([BIP141](https://github.com/carrot/bips/blob/master/bip-0141.mediawiki))
 
 ##### Errors
 - `carrotconsensus_ERR_OK` - No errors with input parameters *(see the return value of `carrotconsensus_verify_script` for the verification status)*

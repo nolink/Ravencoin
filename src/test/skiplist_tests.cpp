@@ -5,7 +5,7 @@
 
 #include "chain.h"
 #include "util.h"
-#include "test/test_raven.h"
+#include "test/test_carrot.h"
 
 #include <vector>
 

@@ -5,7 +5,7 @@ Setup
 ---------------------
 Raven Core is the original Raven client and it builds the backbone of the network. It downloads and, by default, stores the entire history of Raven transactions (which is currently more than 100 GBs); depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
 
-To download Raven Core, visit [ravencore.org](https://ravencoin.org/en/releases/).
+To download Raven Core, visit [carrotcore.org](https://carrotcoin.org/en/releases/).
 
 Running
 ---------------------
@@ -15,12 +15,12 @@ The following are some helpful notes on how to run Raven on your native platform
 
 Unpack the files into a directory and run:
 
-- `bin/raven-qt` (GUI) or
-- `bin/ravend` (headless)
+- `bin/carrot-qt` (GUI) or
+- `bin/carrotd` (headless)
 
 ### Windows
 
-Unpack the files into a directory, and then run raven-qt.exe.
+Unpack the files into a directory, and then run carrot-qt.exe.
 
 ### OS X
 
@@ -28,10 +28,10 @@ Drag Raven-Core to your applications folder, and then run Raven-Core.
 
 ### Need Help?
 
-* See the documentation at the [Raven Wiki](https://en.raven.it/wiki/Main_Page)
+* See the documentation at the [Raven Wiki](https://en.carrot.it/wiki/Main_Page)
 for help and more information.
-* Ask for help on [#raven](http://webchat.freenode.net?channels=raven) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net?channels=raven).
-* Ask for help on the [RavenTalk](https://raventalk.org/) forums, in the [Technical Support board](https://raventalk.org/index.php?board=4.0).
+* Ask for help on [#carrot](http://webchat.freenode.net?channels=carrot) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net?channels=carrot).
+* Ask for help on the [RavenTalk](https://carrottalk.org/) forums, in the [Technical Support board](https://carrottalk.org/index.php?board=4.0).
 
 Building
 ---------------------
@@ -51,7 +51,7 @@ The Raven repo's [root README](/README.md) contains relevant information on the 
 - [Developer Notes](developer-notes.md)
 - [Release Notes](release-notes.md)
 - [Release Process](release-process.md)
-- [Source Code Documentation (External Link)](https://dev.visucore.com/raven/doxygen/)
+- [Source Code Documentation (External Link)](https://dev.visucore.com/carrot/doxygen/)
 - [Translation Process](translation_process.md)
 - [Translation Strings Policy](translation_strings_policy.md)
 - [Travis CI](travis-ci.md)
@@ -62,9 +62,9 @@ The Raven repo's [root README](/README.md) contains relevant information on the 
 - [Benchmarking](benchmarking.md)
 
 ### Resources
-* Discuss on the [RavenTalk](https://raventalk.org/) forums, in the [Development & Technical Discussion board](https://raventalk.org/index.php?board=6.0).
-* Discuss project-specific development on #raven-core-dev on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=raven-core-dev).
-* Discuss general Raven development on #raven-dev on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=raven-dev).
+* Discuss on the [RavenTalk](https://carrottalk.org/) forums, in the [Development & Technical Discussion board](https://carrottalk.org/index.php?board=6.0).
+* Discuss project-specific development on #carrot-core-dev on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=carrot-core-dev).
+* Discuss general Raven development on #carrot-dev on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=carrot-dev).
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)

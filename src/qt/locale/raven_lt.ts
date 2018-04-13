@@ -914,7 +914,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>raven-core</name>
+    <name>carrot-core</name>
     <message>
         <source>Options:</source>
         <translation>Parinktys:</translation>

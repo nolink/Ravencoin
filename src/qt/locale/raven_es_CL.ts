@@ -143,7 +143,7 @@
     </message>
     <message>
         <source>Send coins to a Raven address</source>
-        <translation>Enviar monedas a una dirección raven</translation>
+        <translation>Enviar monedas a una dirección carrot</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -206,8 +206,8 @@
         <translation>Barra de pestañas</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and raven: URIs)</source>
-        <translation>Pide pagos (genera codigos QR and raven: URls)</translation>
+        <source>Request payments (generates QR codes and carrot: URIs)</source>
+        <translation>Pide pagos (genera codigos QR and carrot: URls)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -750,7 +750,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>raven-core</name>
+    <name>carrot-core</name>
     <message>
         <source>Options:</source>
         <translation>Opciones:

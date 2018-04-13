@@ -5,7 +5,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/raven-config.h"
+#include "config/carrot-config.h"
 #endif
 
 #include "util.h"
@@ -88,8 +88,8 @@
 // Application startup time (used for uptime calculation)
 const int64_t nStartupTime = GetTime();
 
-const char * const RAVEN_CONF_FILENAME = "raven.conf";
-const char * const RAVEN_PID_FILENAME = "ravend.pid";
+const char * const RAVEN_CONF_FILENAME = "carrot.conf";
+const char * const RAVEN_PID_FILENAME = "carrotd.pid";
 
 ArgsManager gArgs;
 bool fPrintToConsole = false;
@@ -504,7 +504,7 @@ static std::string FormatException(const std::exception* pex, const char* pszThr
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(nullptr, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "raven";
+    const char* pszModule = "carrot";
 #endif
     if (pex)
         return strprintf(
@@ -526,7 +526,7 @@ fs::path GetDefaultDataDir()
     // Windows < Vista: C:\Documents and Settings\Username\Application Data\Carrot
     // Windows >= Vista: C:\Users\Username\AppData\Roaming\Carrot
     // Mac: ~/Library/Application Support/Carrot
-    // Unix: ~/.raven
+    // Unix: ~/.carrot
 #ifdef WIN32
     // Windows
     return GetSpecialFolderPath(CSIDL_APPDATA) / "Carrot";
@@ -542,7 +542,7 @@ fs::path GetDefaultDataDir()
     return pathRet / "Library/Application Support/Carrot";
 #else
     // Unix
-    return pathRet / ".raven";
+    return pathRet / ".carrot";
 #endif
 #endif
 }
@@ -601,7 +601,7 @@ void ArgsManager::ReadConfigFile(const std::string& confPath)
 {
     fs::ifstream streamConfig(GetConfigFile(confPath));
     if (!streamConfig.good())
-        return; // No raven.conf file is OK
+        return; // No carrot.conf file is OK
 
     {
         LOCK(cs_args);
@@ -610,7 +610,7 @@ void ArgsManager::ReadConfigFile(const std::string& confPath)
 
         for (boost::program_options::detail::config_file_iterator it(streamConfig, setOptions), end; it != end; ++it)
         {
-            // Don't overwrite existing settings so command line settings override raven.conf
+            // Don't overwrite existing settings so command line settings override carrot.conf
             std::string strKey = std::string("-") + it->string_key;
             std::string strValue = it->value[0];
             InterpretNegativeSetting(strKey, strValue);

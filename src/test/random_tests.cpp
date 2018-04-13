@@ -5,7 +5,7 @@
 
 #include "random.h"
 
-#include "test/test_raven.h"
+#include "test/test_carrot.h"
 
 #include <boost/test/unit_test.hpp>
 

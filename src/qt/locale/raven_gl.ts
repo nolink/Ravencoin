@@ -206,8 +206,8 @@
         <translation>Barra de ferramentas</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and raven: URIs)</source>
-        <translation>Solicitar pagos (xenera códigos QR e raven: URIs)</translation>
+        <source>Request payments (generates QR codes and carrot: URIs)</source>
+        <translation>Solicitar pagos (xenera códigos QR e carrot: URIs)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -218,8 +218,8 @@
         <translation>Amosar a listaxe de etiquetas e direccións para recibir empregadas</translation>
     </message>
     <message>
-        <source>Open a raven: URI or payment request</source>
-        <translation>Abrir un raven: URI ou solicitude de pago</translation>
+        <source>Open a carrot: URI or payment request</source>
+        <translation>Abrir un carrot: URI ou solicitude de pago</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -1002,7 +1002,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>raven-core</name>
+    <name>carrot-core</name>
     <message>
         <source>Options:</source>
         <translation>Opcións:</translation>

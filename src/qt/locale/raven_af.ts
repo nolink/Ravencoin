@@ -398,8 +398,8 @@
         <translation>Orebalk</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and raven: URIs)</source>
-        <translation>Versoek betalings (genereer QR-kodes en raven: URI's)</translation>
+        <source>Request payments (generates QR codes and carrot: URIs)</source>
+        <translation>Versoek betalings (genereer QR-kodes en carrot: URI's)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -410,8 +410,8 @@
         <translation>Vertoon die lys van gebruikte ontvangers-adresse en etikette</translation>
     </message>
     <message>
-        <source>Open a raven: URI or payment request</source>
-        <translation>Skep 'n raven: URI of betalingsversoek</translation>
+        <source>Open a carrot: URI or payment request</source>
+        <translation>Skep 'n carrot: URI of betalingsversoek</translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -1010,7 +1010,7 @@
     </message>
     </context>
 <context>
-    <name>raven-core</name>
+    <name>carrot-core</name>
     <message>
         <source>CarrotCore</source>
         <translation>Raven Kern</translation>

@@ -418,7 +418,7 @@
     </message>
     </context>
 <context>
-    <name>raven-core</name>
+    <name>carrot-core</name>
     <message>
         <source>CarrotCore</source>
         <translation>Биткойн ядро</translation>

@@ -180,8 +180,8 @@
         <translation>Peňaženka zašifrovaná</translation>
     </message>
     <message>
-        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ravens from being stolen by malware infecting your computer.</source>
-        <translation>%1 sa teraz zavrie, aby sa ukončil proces šifrovania. Zašifrovanie peňaženky neochráni úplne pred krádežou ravenov škodlivými programami, ktoré prenikli do vášho počítača.</translation>
+        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your carrots from being stolen by malware infecting your computer.</source>
+        <translation>%1 sa teraz zavrie, aby sa ukončil proces šifrovania. Zašifrovanie peňaženky neochráni úplne pred krádežou carrotov škodlivými programami, ktoré prenikli do vášho počítača.</translation>
     </message>
     <message>
         <source>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. For security reasons, previous backups of the unencrypted wallet file will become useless as soon as you start using the new, encrypted wallet.</source>
@@ -339,7 +339,7 @@
     </message>
     <message>
         <source>Send coins to a Raven address</source>
-        <translation>Poslať ravens na adresu</translation>
+        <translation>Poslať carrots na adresu</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -414,8 +414,8 @@
         <translation>Lišta záložiek</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and raven: URIs)</source>
-        <translation>Vyžiadať platby (vygeneruje QR kódy a raven: URI)</translation>
+        <source>Request payments (generates QR codes and carrot: URIs)</source>
+        <translation>Vyžiadať platby (vygeneruje QR kódy a carrot: URI)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -426,8 +426,8 @@
         <translation>Zobraziť zoznam použitých prijímacích adries a ich popisov</translation>
     </message>
     <message>
-        <source>Open a raven: URI or payment request</source>
-        <translation>Otvoriť raven URI alebo výzvu k platbe</translation>
+        <source>Open a carrot: URI or payment request</source>
+        <translation>Otvoriť carrot URI alebo výzvu k platbe</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -886,12 +886,12 @@
         <translation>Forma</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the raven network, as detailed below.</source>
-        <translation>Nedávne transakcie nemusia byť ešte viditeľné preto môže byť zostatok vo vašej peňaženke nesprávny. Táto informácia bude správna keď sa dokončí synchronizovanie peňaženky so sieťou raven, ako je rozpísané nižšie.</translation>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the carrot network, as detailed below.</source>
+        <translation>Nedávne transakcie nemusia byť ešte viditeľné preto môže byť zostatok vo vašej peňaženke nesprávny. Táto informácia bude správna keď sa dokončí synchronizovanie peňaženky so sieťou carrot, ako je rozpísané nižšie.</translation>
     </message>
     <message>
-        <source>Attempting to spend ravens that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation>Pokus o minutie ravenov, ktoré sú ovplyvnené ešte nezobrazenými transakciami, nebude sieťou akceptovaný.</translation>
+        <source>Attempting to spend carrots that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <translation>Pokus o minutie carrotov, ktoré sú ovplyvnené ešte nezobrazenými transakciami, nebude sieťou akceptovaný.</translation>
     </message>
     <message>
         <source>Number of blocks left</source>
@@ -1145,7 +1145,7 @@
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>Zvoľte ako deliť raven pri zobrazovaní pri platbách a užívateľskom rozhraní.</translation>
+        <translation>Zvoľte ako deliť carrot pri zobrazovaní pri platbách a užívateľskom rozhraní.</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1377,7 +1377,7 @@
     </message>
     <message>
         <source>Enter a Raven address (e.g. %1)</source>
-        <translation>Zadajte raven adresu (napr. %1)</translation>
+        <translation>Zadajte carrot adresu (napr. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -2026,7 +2026,7 @@
         <translation>spolu aspoň</translation>
     </message>
     <message>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for raven transactions than the network can process.</source>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks. But be aware that this can end up in a never confirming transaction once there is more demand for carrot transactions than the network can process.</source>
         <translation>Zaplatenie len minimálneho poplatku je v poriadku, pokiaľ existuje menej transakcií ako miesta v blokoch. Uvedomte si však, že ak bude vyšší dopyt po transakciách ako dokáže sieť spracovať, môže byť vaša transakcia odsúvaná a nepotvrdená donekonečna.</translation>
     </message>
     <message>
@@ -2253,8 +2253,8 @@
         <translation>Odstrániť túto položku</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less ravens than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation>Poplatok sa odpočíta od čiastky, ktorú odosielate. Príjemca dostane menej ravenov ako zadáte. Ak je vybraných viacero príjemcov, poplatok je rozdelený rovným dielom.</translation>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less carrots than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <translation>Poplatok sa odpočíta od čiastky, ktorú odosielate. Príjemca dostane menej carrotov ako zadáte. Ak je vybraných viacero príjemcov, poplatok je rozdelený rovným dielom.</translation>
     </message>
     <message>
         <source>S&amp;ubtract fee from amount</source>
@@ -2277,8 +2277,8 @@
         <translation>Vložte popis pre túto adresu aby sa uložila do zoznamu použitých adries</translation>
     </message>
     <message>
-        <source>A message that was attached to the raven: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Raven network.</source>
-        <translation>Správa ktorá bola pripojená k raven: URI a ktorá bude uložená s transakcou pre Vaše potreby. Poznámka: Táto správa nebude poslaná cez sieť Raven.</translation>
+        <source>A message that was attached to the carrot: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Raven network.</source>
+        <translation>Správa ktorá bola pripojená k carrot: URI a ktorá bude uložená s transakcou pre Vaše potreby. Poznámka: Táto správa nebude poslaná cez sieť Raven.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2322,7 +2322,7 @@
         <translation>&amp;Podpísať Správu</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive ravens sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <source>You can sign messages/agreements with your addresses to prove you can receive carrots sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
         <translation>Môžete podpísať správy svojou adresou a dokázať, že viete prijímať mince zaslané na túto adresu. Buďte však opatrní a podpíšte len podrobné prehlásenia, s ktorými plne súhlasíte, nakoľko útoky typu "phishing" Vás môžu lákať k podpísaniu nejasných alebo príliš všeobecných tvrdení čím prevezmú vašu identitu.</translation>
     </message>
     <message>
@@ -2801,7 +2801,7 @@
     </message>
     <message>
         <source>Copy raw transaction</source>
-        <translation>Skopírovať neupravenú transakciu</translation>
+        <translation>Skopírovať neupcarrotú transakciu</translation>
     </message>
     <message>
         <source>Copy full transaction details</source>
@@ -2933,7 +2933,7 @@
     </message>
 </context>
 <context>
-    <name>raven-core</name>
+    <name>carrot-core</name>
     <message>
         <source>Options:</source>
         <translation>Možnosti:</translation>

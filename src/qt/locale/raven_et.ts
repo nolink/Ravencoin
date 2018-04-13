@@ -366,12 +366,12 @@
         <translation>Vahelehe tööriistariba</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and raven: URIs)</source>
-        <translation>Loo maksepäring (genereerib QR koodid ja raveni: URId)</translation>
+        <source>Request payments (generates QR codes and carrot: URIs)</source>
+        <translation>Loo maksepäring (genereerib QR koodid ja carroti: URId)</translation>
     </message>
     <message>
-        <source>Open a raven: URI or payment request</source>
-        <translation>Ava raveni: URI või maksepäring</translation>
+        <source>Open a carrot: URI or payment request</source>
+        <translation>Ava carroti: URI või maksepäring</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -1732,7 +1732,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>raven-core</name>
+    <name>carrot-core</name>
     <message>
         <source>Options:</source>
         <translation>Valikud:</translation>

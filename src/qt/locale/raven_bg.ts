@@ -406,7 +406,7 @@
         <translation>Раздели</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and raven: URIs)</source>
+        <source>Request payments (generates QR codes and carrot: URIs)</source>
         <translation>Изискване на плащания(генерира QR кодове и биткойн: URIs)</translation>
     </message>
     <message>
@@ -418,7 +418,7 @@
         <translation>Покажи списък с използваните адреси и имена.</translation>
     </message>
     <message>
-        <source>Open a raven: URI or payment request</source>
+        <source>Open a carrot: URI or payment request</source>
         <translation>Отворете биткойн: URI  или заявка за плащане</translation>
     </message>
     <message>
@@ -1086,7 +1086,7 @@
         <translation>Възникна грешка по време назаявката за плащане</translation>
     </message>
     <message>
-        <source>Cannot start raven: click-to-pay handler</source>
+        <source>Cannot start carrot: click-to-pay handler</source>
         <translation>Биткойн не можe да се стартира: click-to-pay handler</translation>
     </message>
     <message>
@@ -2352,7 +2352,7 @@
     </message>
 </context>
 <context>
-    <name>raven-core</name>
+    <name>carrot-core</name>
     <message>
         <source>Options:</source>
         <translation>Опции:</translation>

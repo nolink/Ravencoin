@@ -5,7 +5,7 @@
 
 #include "qvalidatedlineedit.h"
 
-#include "ravenaddressvalidator.h"
+#include "carrotaddressvalidator.h"
 #include "guiconstants.h"
 
 QValidatedLineEdit::QValidatedLineEdit(QWidget *parent) :

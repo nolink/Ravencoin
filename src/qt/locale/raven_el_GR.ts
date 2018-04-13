@@ -223,7 +223,7 @@
     </message>
     <message>
         <source>Send coins to a Raven address</source>
-        <translation>Στείλε νομίσματα σε μια διεύθυνση raven</translation>
+        <translation>Στείλε νομίσματα σε μια διεύθυνση carrot</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -298,8 +298,8 @@
         <translation>Εργαλειοθήκη καρτελών</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and raven: URIs)</source>
-        <translation>Αίτηση πληρωμών (δημιουργεί QR codes και διευθύνσεις raven: )</translation>
+        <source>Request payments (generates QR codes and carrot: URIs)</source>
+        <translation>Αίτηση πληρωμών (δημιουργεί QR codes και διευθύνσεις carrot: )</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -310,8 +310,8 @@
         <translation>Προβολή της λίστας των χρησιμοποιημένων διευθύνσεων και ετικετών λήψεως</translation>
     </message>
     <message>
-        <source>Open a raven: URI or payment request</source>
-        <translation>Άνοιγμα raven: URI αίτησης πληρωμής</translation>
+        <source>Open a carrot: URI or payment request</source>
+        <translation>Άνοιγμα carrot: URI αίτησης πληρωμής</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -1673,7 +1673,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>raven-core</name>
+    <name>carrot-core</name>
     <message>
         <source>Options:</source>
         <translation>Επιλογές:</translation>

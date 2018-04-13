@@ -180,7 +180,7 @@
         <translation>Lompakko salattiin</translation>
     </message>
     <message>
-        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ravens from being stolen by malware infecting your computer.</source>
+        <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your carrots from being stolen by malware infecting your computer.</source>
         <translation>%1 sulkeutuu lopettaakseen salausprosessin. Muista, että salattukaan lompakko ei täysin suojaa sitä haittaohjelmien aiheuttamilta varkauksilta.</translation>
     </message>
     <message>
@@ -414,8 +414,8 @@
         <translation>Välilehtipalkki</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and raven: URIs)</source>
-        <translation>Pyydä maksuja (Luo QR koodit ja raven: URIt)</translation>
+        <source>Request payments (generates QR codes and carrot: URIs)</source>
+        <translation>Pyydä maksuja (Luo QR koodit ja carrot: URIt)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -426,8 +426,8 @@
         <translation>Näytä vastaanottamiseen käytettyjen osoitteiden ja nimien lista</translation>
     </message>
     <message>
-        <source>Open a raven: URI or payment request</source>
-        <translation>Avaa raven: URI tai maksupyyntö</translation>
+        <source>Open a carrot: URI or payment request</source>
+        <translation>Avaa carrot: URI tai maksupyyntö</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -1105,11 +1105,11 @@
     </message>
     <message>
         <source>&amp;Unit to show amounts in:</source>
-        <translation>Yksikkö jona raven-määrät näytetään</translation>
+        <translation>Yksikkö jona carrot-määrät näytetään</translation>
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>Valitse mitä yksikköä käytetään ensisijaisesti raven-määrien näyttämiseen.</translation>
+        <translation>Valitse mitä yksikköä käytetään ensisijaisesti carrot-määrien näyttämiseen.</translation>
     </message>
     <message>
         <source>Whether to show coin control features or not.</source>
@@ -1960,8 +1960,8 @@
         <translation>Poista tämä alkio</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less ravens than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation>Kulu vähennetään lähetettävästä määrästä. Saaja vastaanottaa vähemmän raveneja kuin merkitset Määrä-kenttään. Jos saajia on monia, kulu jaetaan tasan.</translation>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less carrots than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <translation>Kulu vähennetään lähetettävästä määrästä. Saaja vastaanottaa vähemmän carroteja kuin merkitset Määrä-kenttään. Jos saajia on monia, kulu jaetaan tasan.</translation>
     </message>
     <message>
         <source>S&amp;ubtract fee from amount</source>
@@ -1984,8 +1984,8 @@
         <translation>Aseta nimi tälle osoitteelle lisätäksesi sen käytettyjen osoitteiden listalle.</translation>
     </message>
     <message>
-        <source>A message that was attached to the raven: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Raven network.</source>
-        <translation>Viesti joka liitettiin raven: URI:iin tallennetaan rahansiirtoon viitteeksi. Tätä viestiä ei lähetetä Raven-verkkoon.</translation>
+        <source>A message that was attached to the carrot: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Raven network.</source>
+        <translation>Viesti joka liitettiin carrot: URI:iin tallennetaan rahansiirtoon viitteeksi. Tätä viestiä ei lähetetä Raven-verkkoon.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2372,7 +2372,7 @@
     </message>
     </context>
 <context>
-    <name>raven-core</name>
+    <name>carrot-core</name>
     <message>
         <source>Options:</source>
         <translation>Asetukset:</translation>

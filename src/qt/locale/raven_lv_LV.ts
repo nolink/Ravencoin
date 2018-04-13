@@ -218,12 +218,12 @@
         <translation>Ciļņu rīkjosla</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and raven: URIs)</source>
-        <translation>Pieprasīt maksājumus (izveido QR kodu un raven: URIs)</translation>
+        <source>Request payments (generates QR codes and carrot: URIs)</source>
+        <translation>Pieprasīt maksājumus (izveido QR kodu un carrot: URIs)</translation>
     </message>
     <message>
-        <source>Open a raven: URI or payment request</source>
-        <translation>Atvērt raven URI vai maksājuma pieprasījumu</translation>
+        <source>Open a carrot: URI or payment request</source>
+        <translation>Atvērt carrot URI vai maksājuma pieprasījumu</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -499,7 +499,7 @@
     </message>
     <message>
         <source>Enable coin &amp;control features</source>
-        <translation>Ieslēgt raven &amp;kontroles funkcijas</translation>
+        <translation>Ieslēgt carrot &amp;kontroles funkcijas</translation>
     </message>
     <message>
         <source>&amp;Spend unconfirmed change</source>
@@ -1098,7 +1098,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>raven-core</name>
+    <name>carrot-core</name>
     <message>
         <source>Options:</source>
         <translation>Iespējas:</translation>

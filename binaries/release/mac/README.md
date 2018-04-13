@@ -1,8 +1,8 @@
 # RavenBinaries Mac Download Instructions
 
-1) Download and copy raven.dmg to desired folder 
+1) Download and copy carrot.dmg to desired folder 
 
-2) Double click the raven.dmg
+2) Double click the carrot.dmg
 
 3) Drag Raven Core icon to the Applications 
 

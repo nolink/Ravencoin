@@ -1,7 +1,7 @@
 Raven Core integration/staging tree
 =====================================
 
-https://ravencoin.org
+https://carrotcoin.org
 
 What is Raven?
 ----------------
@@ -13,7 +13,7 @@ out collectively by the network. Raven Core is the name of open source
 software which enables the use of this currency.
 
 For more information, as well as an immediately useable, binary version of
-the Raven Core software, see https://ravencoin.org
+the Raven Core software, see https://carrotcoin.org
 
 License
 -------
@@ -30,11 +30,11 @@ regularly to indicate new official, stable release versions of Raven Core.
 
 The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).
 
-The developer [mailing list](https://lists.linuxfoundation.org/mailman/listinfo/raven-dev)
+The developer [mailing list](https://lists.linuxfoundation.org/mailman/listinfo/carrot-dev)
 should be used to discuss complicated or controversial changes before working
 on a patch set.
 
-Developer IRC can be found on Freenode at #raven-core-dev.
+Developer IRC can be found on Freenode at #carrot-core-dev.
 
 Testing
 -------
@@ -46,7 +46,7 @@ lots of money.
 
 Testnet is now up and running and available to use during development. There is an issue when connecting to the testnet that requires the use of the -maxtipage parameter in order to connect to the test network initially. After the initial launch the -maxtipage parameter is not required.
 
-Use this command to initially start ravend on the testnet. <code>./ravend -testnet -maxtipage=259200</code>
+Use this command to initially start carrotd on the testnet. <code>./carrotd -testnet -maxtipage=259200</code>
 
 ### Automated Testing
 
@@ -74,7 +74,7 @@ A digital peer to peer network for the facilitation of asset transfer.
 
 
 
-In the fictional world of Westeros, ravens are used as messengers who carry statements of truth. Ravencoin is a use case specific blockchain designed to carry statements of truth about who owns what assets. 
+In the fictional world of Westeros, carrots are used as messengers who carry statements of truth. Ravencoin is a use case specific blockchain designed to carry statements of truth about who owns what assets. 
 
 
 

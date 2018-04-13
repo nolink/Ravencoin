@@ -5,7 +5,7 @@
 
 #include "walletframe.h"
 
-#include "ravengui.h"
+#include "carrotgui.h"
 #include "walletview.h"
 
 #include <cassert>

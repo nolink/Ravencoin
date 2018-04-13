@@ -4,14 +4,14 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/raven-config.h"
+#include "config/carrot-config.h"
 #endif
 
 #include "utilitydialog.h"
 
 #include "ui_helpmessagedialog.h"
 
-#include "ravengui.h"
+#include "carrotgui.h"
 #include "clientmodel.h"
 #include "guiconstants.h"
 #include "intro.h"
@@ -71,7 +71,7 @@ HelpMessageDialog::HelpMessageDialog(QWidget *parent, bool about) :
     } else {
         setWindowTitle(tr("Command-line options"));
         QString header = tr("Usage:") + "\n" +
-            "  raven-qt [" + tr("command-line options") + "]                     " + "\n";
+            "  carrot-qt [" + tr("command-line options") + "]                     " + "\n";
         QTextCursor cursor(ui->helpMessage->document());
         cursor.insertText(version);
         cursor.insertBlock();

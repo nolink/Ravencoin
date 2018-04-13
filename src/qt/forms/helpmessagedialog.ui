@@ -52,7 +52,7 @@
         </size>
        </property>
        <property name="pixmap">
-        <pixmap resource="../carrot.qrc">:/icons/raven</pixmap>
+        <pixmap resource="../carrot.qrc">:/icons/carrot</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>

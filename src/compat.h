@@ -8,7 +8,7 @@
 #define CARROT_COMPAT_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/raven-config.h"
+#include "config/carrot-config.h"
 #endif
 
 #ifdef WIN32

@@ -706,7 +706,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>raven-core</name>
+    <name>carrot-core</name>
     <message>
         <source>CarrotCore</source>
         <translation>Raven மையம்</translation>

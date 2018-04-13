@@ -511,7 +511,7 @@ void static CarrotMiner(const CChainParams& chainparams)
 {
     LogPrintf("CarrotMiner -- started\n");
     SetThreadPriority(THREAD_PRIORITY_LOWEST);
-    RenameThread("raven-miner");
+    RenameThread("carrot-miner");
 
     unsigned int nExtraNonce = 0;
 
