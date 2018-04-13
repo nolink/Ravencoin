@@ -26,7 +26,7 @@ QT_BEGIN_NAMESPACE
 class QUrl;
 QT_END_NAMESPACE
 
-/** Dialog for sending ravens */
+/** Dialog for sending carrots */
 class SendCoinsDialog : public QDialog
 {
     Q_OBJECT

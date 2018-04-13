@@ -53,8 +53,8 @@ qvaluecombobox.h
 raven.cpp
 ravenaddressvalidator.cpp
 ravenaddressvalidator.h
-ravenamountfield.cpp
-ravenamountfield.h
+carrotamountfield.cpp
+carrotamountfield.h
 ravengui.cpp
 ravengui.h
 ravenstrings.cpp

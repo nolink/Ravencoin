@@ -1,6 +1,6 @@
 #include "wallettests.h"
 
-#include "qt/ravenamountfield.h"
+#include "qt/carrotamountfield.h"
 #include "qt/callback.h"
 #include "qt/optionsmodel.h"
 #include "qt/platformstyle.h"

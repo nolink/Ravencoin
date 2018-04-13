@@ -1253,7 +1253,7 @@
   <customwidget>
    <class>CarrotAmountField</class>
    <extends>QLineEdit</extends>
-   <header>ravenamountfield.h</header>
+   <header>carrotamountfield.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>

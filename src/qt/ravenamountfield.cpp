@@ -3,7 +3,7 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "ravenamountfield.h"
+#include "carrotamountfield.h"
 
 #include "ravenunits.h"
 #include "guiconstants.h"
@@ -189,7 +189,7 @@ Q_SIGNALS:
     void valueChanged();
 };
 
-#include "ravenamountfield.moc"
+#include "carrotamountfield.moc"
 
 CarrotAmountField::CarrotAmountField(QWidget *parent) :
     QWidget(parent),

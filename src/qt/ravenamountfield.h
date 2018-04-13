@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef CARROT_QT_RAVENAMOUNTFIELD_H
-#define CARROT_QT_RAVENAMOUNTFIELD_H
+#ifndef CARROT_QT_CARROTAMOUNTFIELD_H
+#define CARROT_QT_CARROTAMOUNTFIELD_H
 
 #include "amount.h"
 
@@ -16,7 +16,7 @@ QT_BEGIN_NAMESPACE
 class QValueComboBox;
 QT_END_NAMESPACE
 
-/** Widget for entering raven amounts.
+/** Widget for entering carrot amounts.
   */
 class CarrotAmountField: public QWidget
 {
@@ -73,4 +73,4 @@ private Q_SLOTS:
 
 };
 
-#endif // CARROT_QT_RAVENAMOUNTFIELD_H
+#endif // CARROT_QT_CARROTAMOUNTFIELD_H

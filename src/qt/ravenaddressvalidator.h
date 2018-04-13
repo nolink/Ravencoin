@@ -21,7 +21,7 @@ public:
     State validate(QString &input, int &pos) const;
 };
 
-/** Carrot address widget validator, checks for a valid raven address.
+/** Carrot address widget validator, checks for a valid carrot address.
  */
 class CarrotAddressCheckValidator : public QValidator
 {

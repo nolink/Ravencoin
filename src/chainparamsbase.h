@@ -11,7 +11,7 @@
 #include <vector>
 
 /**
- * CBaseChainParams defines the base parameters (shared between raven-cli and ravend)
+ * CBaseChainParams defines the base parameters (shared between carrot-cli and carrotd)
  * of a given instance of the Carrot system.
  */
 class CBaseChainParams

@@ -50,7 +50,7 @@ static const int MAX_URI_LENGTH = 255;
 #define SPINNER_FRAMES 36
 
 #define QAPP_ORG_NAME "Carrot"
-#define QAPP_ORG_DOMAIN "raven.org"
+#define QAPP_ORG_DOMAIN "carrot.org"
 #define QAPP_APP_NAME_DEFAULT "Carrot-Qt"
 #define QAPP_APP_NAME_TESTNET "Carrot-Qt-testnet"
 

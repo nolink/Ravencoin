@@ -53,7 +53,7 @@ public:
     explicit CarrotUnits(QObject *parent);
 
     /** Carrot units.
-      @note Source: https://en.raven.it/wiki/Units . Please add only sensible ones
+      @note Source: https://en.carrot.it/wiki/Units . Please add only sensible ones
      */
     enum Unit
     {

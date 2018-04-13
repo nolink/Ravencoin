@@ -2663,7 +2663,7 @@ bool CWallet::CreateTransaction(const std::vector<CRecipient>& vecSend, CWalletT
 
             // Create change script that will be used if we need change
             // TODO: pass in scriptChange instead of reservekey so
-            // change transaction isn't always pay-to-raven-address
+            // change transaction isn't always pay-to-carrot-address
             CScript scriptChange;
 
             // coin control: send change to custom address
@@ -3698,7 +3698,7 @@ void CWallet::GetKeyBirthTimes(std::map<CTxDestination, int64_t> &mapKeyBirth) c
  *   the block time.
  *
  * For more information see CWalletTx::nTimeSmart,
- * https://raventalk.org/?topic=54527, or
+ * https://carrottalk.org/?topic=54527, or
  * https://github.com/CarrotProject/Carrotcoin/pull/1393.
  */
 unsigned int CWallet::ComputeTimeSmart(const CWalletTx& wtx) const
