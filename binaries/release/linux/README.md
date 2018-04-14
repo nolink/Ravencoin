@@ -1,4 +1,4 @@
-# RavenBinaries Linux Download Instructions
+# CarrotBinaries Linux Download Instructions
 
 Download and copy binaries to desired folder
 

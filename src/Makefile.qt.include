@@ -1,5 +1,5 @@
 # Copyright (c) 2013-2016 The Bitcoin Core developers
-# Copyright (c) 2017 The Raven Core developers
+# Copyright (c) 2017 The Carrot Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -162,7 +162,7 @@ QT_MOC_CPP = \
   qt/moc_walletmodel.cpp \
   qt/moc_walletview.cpp
 
-RAVEN_MM = \
+CARROT_MM = \
   qt/macdockiconhandler.mm \
   qt/macnotificationhandler.mm
 
@@ -183,7 +183,7 @@ PROTOBUF_CC = qt/paymentrequest.pb.cc
 PROTOBUF_H = qt/paymentrequest.pb.h
 PROTOBUF_PROTO = qt/paymentrequest.proto
 
-RAVEN_QT_H = \
+CARROT_QT_H = \
   qt/addressbookpage.h \
   qt/addresstablemodel.h \
   qt/askpassphrasedialog.h \
@@ -295,7 +295,7 @@ RES_ICONS = \
   qt/res/icons/warning.png \
   qt/res/icons/verify.png
 
-RAVEN_QT_BASE_CPP = \
+CARROT_QT_BASE_CPP = \
   qt/bantablemodel.cpp \
   qt/carrotaddressvalidator.cpp \
   qt/carrotamountfield.cpp \
@@ -319,9 +319,9 @@ RAVEN_QT_BASE_CPP = \
   qt/trafficgraphwidget.cpp \
   qt/utilitydialog.cpp
 
-RAVEN_QT_WINDOWS_CPP = qt/winshutdownmonitor.cpp
+CARROT_QT_WINDOWS_CPP = qt/winshutdownmonitor.cpp
 
-RAVEN_QT_WALLET_CPP = \
+CARROT_QT_WALLET_CPP = \
   qt/addressbookpage.cpp \
   qt/addresstablemodel.cpp \
   qt/askpassphrasedialog.cpp \
@@ -349,28 +349,28 @@ RAVEN_QT_WALLET_CPP = \
   qt/walletmodeltransaction.cpp \
   qt/walletview.cpp
 
-RAVEN_QT_CPP = $(RAVEN_QT_BASE_CPP)
+CARROT_QT_CPP = $(CARROT_QT_BASE_CPP)
 if TARGET_WINDOWS
-RAVEN_QT_CPP += $(RAVEN_QT_WINDOWS_CPP)
+CARROT_QT_CPP += $(CARROT_QT_WINDOWS_CPP)
 endif
 if ENABLE_WALLET
-RAVEN_QT_CPP += $(RAVEN_QT_WALLET_CPP)
+CARROT_QT_CPP += $(CARROT_QT_WALLET_CPP)
 endif
 
 RES_IMAGES = 
 
 RES_MOVIES = $(wildcard $(srcdir)/qt/res/movies/spinner-*.png)
 
-RAVEN_RC = qt/res/carrot-qt-res.rc
+CARROT_RC = qt/res/carrot-qt-res.rc
 
-RAVEN_QT_INCLUDES = -I$(builddir)/qt -I$(srcdir)/qt -I$(srcdir)/qt/forms \
+CARROT_QT_INCLUDES = -I$(builddir)/qt -I$(srcdir)/qt -I$(srcdir)/qt/forms \
   -I$(builddir)/qt/forms -DQT_NO_KEYWORDS
 
-qt_libcarrotqt_a_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES) $(RAVEN_QT_INCLUDES) \
+qt_libcarrotqt_a_CPPFLAGS = $(AM_CPPFLAGS) $(CARROT_INCLUDES) $(CARROT_QT_INCLUDES) \
   $(QT_INCLUDES) $(QT_DBUS_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
 qt_libcarrotqt_a_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
 
-qt_libcarrotqt_a_SOURCES = $(RAVEN_QT_CPP) $(RAVEN_QT_H) $(QT_FORMS_UI) \
+qt_libcarrotqt_a_SOURCES = $(CARROT_QT_CPP) $(CARROT_QT_H) $(QT_FORMS_UI) \
   $(QT_QRC) $(QT_QRC_LOCALE) $(QT_TS) $(PROTOBUF_PROTO) $(RES_ICONS) $(RES_IMAGES) $(RES_MOVIES)
 
 nodist_qt_libcarrotqt_a_SOURCES = $(QT_MOC_CPP) $(QT_MOC) $(PROTOBUF_CC) \
@@ -390,25 +390,25 @@ $(QT_MOC): $(PROTOBUF_H)
 $(QT_MOC_CPP): $(PROTOBUF_H)
 
 # carrot-qt binary #
-qt_carrot_qt_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES) $(RAVEN_QT_INCLUDES) \
+qt_carrot_qt_CPPFLAGS = $(AM_CPPFLAGS) $(CARROT_INCLUDES) $(CARROT_QT_INCLUDES) \
   $(QT_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
 qt_carrot_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
 
 qt_carrot_qt_SOURCES = qt/carrot.cpp
 if TARGET_DARWIN
-  qt_carrot_qt_SOURCES += $(RAVEN_MM)
+  qt_carrot_qt_SOURCES += $(CARROT_MM)
 endif
 if TARGET_WINDOWS
-  qt_carrot_qt_SOURCES += $(RAVEN_RC)
+  qt_carrot_qt_SOURCES += $(CARROT_RC)
 endif
-qt_carrot_qt_LDADD = qt/libcarrotqt.a $(LIBRAVEN_SERVER)
+qt_carrot_qt_LDADD = qt/libcarrotqt.a $(LIBCARROT_SERVER)
 if ENABLE_WALLET
-qt_carrot_qt_LDADD += $(LIBRAVEN_WALLET)
+qt_carrot_qt_LDADD += $(LIBCARROT_WALLET)
 endif
 if ENABLE_ZMQ
-qt_carrot_qt_LDADD += $(LIBRAVEN_ZMQ) $(ZMQ_LIBS)
+qt_carrot_qt_LDADD += $(LIBCARROT_ZMQ) $(ZMQ_LIBS)
 endif
-qt_carrot_qt_LDADD += $(LIBRAVEN_CLI) $(LIBRAVEN_COMMON) $(LIBRAVEN_UTIL) $(LIBRAVEN_CONSENSUS) $(LIBRAVEN_CRYPTO) $(LIBUNIVALUE) $(LIBLEVELDB) $(LIBLEVELDB_SSE42) $(LIBMEMENV) \
+qt_carrot_qt_LDADD += $(LIBCARROT_CLI) $(LIBCARROT_COMMON) $(LIBCARROT_UTIL) $(LIBCARROT_CONSENSUS) $(LIBCARROT_CRYPTO) $(LIBUNIVALUE) $(LIBLEVELDB) $(LIBLEVELDB_SSE42) $(LIBMEMENV) \
   $(BOOST_LIBS) $(QT_LIBS) $(QT_DBUS_LIBS) $(QR_LIBS) $(PROTOBUF_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(LIBSECP256K1) \
   $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
 qt_carrot_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
@@ -423,7 +423,7 @@ $(srcdir)/qt/carrotstrings.cpp: $(libcarrot_server_a_SOURCES) $(libcarrot_wallet
 	@test -n $(XGETTEXT) || echo "xgettext is required for updating translations"
 	$(AM_V_GEN) cd $(srcdir); XGETTEXT=$(XGETTEXT) PACKAGE_NAME="$(PACKAGE_NAME)" COPYRIGHT_HOLDERS="$(COPYRIGHT_HOLDERS)" COPYRIGHT_HOLDERS_SUBSTITUTION="$(COPYRIGHT_HOLDERS_SUBSTITUTION)" $(PYTHON) ../share/qt/extract_strings_qt.py $^
 
-translate: $(srcdir)/qt/carrotstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(RAVEN_QT_BASE_CPP) qt/carrot.cpp $(RAVEN_QT_WINDOWS_CPP) $(RAVEN_QT_WALLET_CPP) $(RAVEN_QT_H) $(RAVEN_MM)
+translate: $(srcdir)/qt/carrotstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(CARROT_QT_BASE_CPP) qt/carrot.cpp $(CARROT_QT_WINDOWS_CPP) $(CARROT_QT_WALLET_CPP) $(CARROT_QT_H) $(CARROT_MM)
 	@test -n $(LUPDATE) || echo "lupdate is required for updating translations"
 	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts $(srcdir)/qt/locale/carrot_en.ts
 
@@ -444,7 +444,7 @@ CLEAN_QT = $(nodist_qt_libcarrotqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda q
 CLEANFILES += $(CLEAN_QT)
 
 carrot_qt_clean: FORCE
-	rm -f $(CLEAN_QT) $(qt_libcarrotqt_a_OBJECTS) $(qt_carrot_qt_OBJECTS) qt/carrot-qt$(EXEEXT) $(LIBRAVENQT)
+	rm -f $(CLEAN_QT) $(qt_libcarrotqt_a_OBJECTS) $(qt_carrot_qt_OBJECTS) qt/carrot-qt$(EXEEXT) $(LIBCARROTQT)
 
 carrot_qt : qt/carrot-qt$(EXEEXT)
 

@@ -3,7 +3,7 @@ Shared Libraries
 
 ## carrotconsensus
 
-The purpose of this library is to make the verification functionality that is critical to Raven's consensus available to other applications, e.g. to language bindings.
+The purpose of this library is to make the verification functionality that is critical to Carrot's consensus available to other applications, e.g. to language bindings.
 
 ### API
 
@@ -43,7 +43,7 @@ The interface is defined in the C header `carrotconsensus.h` located in  `src/sc
 - `carrotconsensus_ERR_AMOUNT_REQUIRED` - Input amount is required if WITNESS is used
 
 ### Example Implementations
-- [NRaven](https://github.com/NicolasDorier/NRaven/blob/master/NRaven/Script.cs#L814) (.NET Bindings)
+- [NCarrot](https://github.com/NicolasDorier/NCarrot/blob/master/NCarrot/Script.cs#L814) (.NET Bindings)
 - [node-libcarrotconsensus](https://github.com/bitpay/node-libcarrotconsensus) (Node.js Bindings)
 - [java-libcarrotconsensus](https://github.com/dexX7/java-libcarrotconsensus) (Java Bindings)
 - [carrotconsensus-php](https://github.com/Bit-Wasp/carrotconsensus-php) (PHP Bindings)

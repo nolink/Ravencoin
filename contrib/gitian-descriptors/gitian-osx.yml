@@ -28,7 +28,7 @@ packages:
 - "python-setuptools"
 - "fonts-tuffy"
 remotes:
-- "url": "https://github.com/RavenProject/Ravencoin.git"
+- "url": "https://github.com/CarrotProject/Carrotcoin.git"
   "dir": "carrot"
 files:
 - "MacOSX10.11.sdk.tar.gz"

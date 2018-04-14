@@ -26,13 +26,13 @@ If you want to build the disk image with `make deploy` (.dmg / optional), you ne
 
 NOTE: Building with Qt4 is still supported, however, could result in a broken UI. Building with Qt5 is recommended.
 
-Build Raven Core
+Build Carrot Core
 ------------------------
 
 1. Clone the carrot source code and cd into `carrot`
 
-        git clone https://github.com/RavenProject/Ravencoin
-        cd Ravencoin
+        git clone https://github.com/CarrotProject/Carrotcoin
+        cd Carrotcoin
 
 2.  Build carrot-core:
 
@@ -55,19 +55,19 @@ Build Raven Core
 Running
 -------
 
-Raven Core is now available at `./src/carrotd`
+Carrot Core is now available at `./src/carrotd`
 
 Before running, it's recommended you create an RPC configuration file.
 
-    echo -e "rpcuser=carrotrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/Raven/carrot.conf"
+    echo -e "rpcuser=carrotrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/Carrot/carrot.conf"
 
-    chmod 600 "/Users/${USER}/Library/Application Support/Raven/carrot.conf"
+    chmod 600 "/Users/${USER}/Library/Application Support/Carrot/carrot.conf"
 
 The first time you run carrotd, it will start downloading the blockchain. This process could take several hours.
 
 You can monitor the download process by looking at the debug.log file:
 
-    tail -f $HOME/Library/Application\ Support/Raven/debug.log
+    tail -f $HOME/Library/Application\ Support/Carrot/debug.log
 
 Other commands:
 -------
@@ -98,4 +98,4 @@ Notes
 
 * Tested on OS X 10.8 through 10.12 on 64-bit Intel processors only.
 
-* Building with downloaded Qt binaries is not officially supported. See the notes in [#7714](https://github.com/RavenProject/Ravencoin/issues/7714)
+* Building with downloaded Qt binaries is not officially supported. See the notes in [#7714](https://github.com/CarrotProject/Carrotcoin/issues/7714)

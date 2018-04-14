@@ -68,9 +68,9 @@ can then be controlled by group membership.
 ### Mac OS X
 
 Binary:              `/usr/local/bin/carrotd`  
-Configuration file:  `~/Library/Application Support/Raven/carrot.conf`  
-Data directory:      `~/Library/Application Support/Raven`  
-Lock file:           `~/Library/Application Support/Raven/.lock`  
+Configuration file:  `~/Library/Application Support/Carrot/carrot.conf`  
+Data directory:      `~/Library/Application Support/Carrot`  
+Lock file:           `~/Library/Application Support/Carrot/.lock`  
 
 Installing Service Configuration
 -----------------------------------
@@ -104,7 +104,7 @@ use old versions of Upstart and do not supply the start-stop-daemon utility.
 Copy carrotd.init to /etc/init.d/carrotd. Test by running `service carrotd start`.
 
 Using this script, you can adjust the path and flags to the carrotd program by
-setting the RAVEND and FLAGS environment variables in the file
+setting the CARROTD and FLAGS environment variables in the file
 /etc/sysconfig/carrotd. You can also use the DAEMONOPTS environment variable here.
 
 ### Mac OS X

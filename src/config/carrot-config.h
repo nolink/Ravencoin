@@ -1,9 +1,9 @@
 /* src/config/carrot-config.h.  Generated from carrot-config.h.in by configure.  */
 /* src/config/carrot-config.h.in.  Generated from configure.ac by autoheader.  */
 
-#ifndef RAVEN_CONFIG_H
+#ifndef CARROT_CONFIG_H
 
-#define RAVEN_CONFIG_H
+#define CARROT_CONFIG_H
 
 /* Define if building universal (internal helper macro) */
 /* #undef AC_APPLE_UNIVERSAL_BUILD */
@@ -27,10 +27,10 @@
 #define COPYRIGHT_HOLDERS "The %s developers"
 
 /* Copyright holder(s) */
-#define COPYRIGHT_HOLDERS_FINAL "The Raven Core developers"
+#define COPYRIGHT_HOLDERS_FINAL "The Carrot Core developers"
 
 /* Replacement for %s in copyright holders string */
-#define COPYRIGHT_HOLDERS_SUBSTITUTION "Raven Core"
+#define COPYRIGHT_HOLDERS_SUBSTITUTION "Carrot Core"
 
 /* Copyright year */
 #define COPYRIGHT_YEAR 2017
@@ -345,7 +345,7 @@
 #define LT_OBJDIR ".libs/"
 
 /* Define to the address where bug reports for this package should be sent. */
-#define PACKAGE_BUGREPORT "https://github.com/RavenProject/Ravencoin/issues"
+#define PACKAGE_BUGREPORT "https://github.com/CarrotProject/Carrotcoin/issues"
 
 /* Define to the full name of this package. */
 #define PACKAGE_NAME "CarrotCore"
@@ -426,4 +426,4 @@
 /* Define for large files, on AIX-style hosts. */
 /* #undef _LARGE_FILES */
 
-#endif //RAVEN_CONFIG_H
+#endif //CARROT_CONFIG_H

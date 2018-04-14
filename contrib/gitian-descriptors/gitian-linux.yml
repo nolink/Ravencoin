@@ -28,7 +28,7 @@ packages:
 - "ca-certificates"
 - "python"
 remotes:
-- "url": "https://github.com/RavenProject/Ravencoin.git"
+- "url": "https://github.com/CarrotProject/Carrotcoin.git"
   "dir": "carrot"
 files: []
 script: |

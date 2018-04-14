@@ -88,8 +88,8 @@
 // Application startup time (used for uptime calculation)
 const int64_t nStartupTime = GetTime();
 
-const char * const RAVEN_CONF_FILENAME = "carrot.conf";
-const char * const RAVEN_PID_FILENAME = "carrotd.pid";
+const char * const CARROT_CONF_FILENAME = "carrot.conf";
+const char * const CARROT_PID_FILENAME = "carrotd.pid";
 
 ArgsManager gArgs;
 bool fPrintToConsole = false;
@@ -626,7 +626,7 @@ void ArgsManager::ReadConfigFile(const std::string& confPath)
 #ifndef WIN32
 fs::path GetPidFile()
 {
-    fs::path pathPidFile(gArgs.GetArg("-pid", RAVEN_PID_FILENAME));
+    fs::path pathPidFile(gArgs.GetArg("-pid", CARROT_PID_FILENAME));
     if (!pathPidFile.is_complete()) pathPidFile = GetDataDir() / pathPidFile;
     return pathPidFile;
 }

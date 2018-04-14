@@ -3,5 +3,5 @@ git pull origin carrot
 ./autogen.sh
 ./configure --disable-tests --disable-bench --enable-cxx --disable-shared --with-pic CXXFLAGS="-fPIC" CPPFLAGS="-fPIC"
 make
-#/root/Ravencoin/src/ravend -daemon
+#/root/Carrotcoin/src/ravend -daemon
 #tail -f /root/.raven/debug.log

@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef CARROT_QT_RAVENGUI_H
-#define CARROT_QT_RAVENGUI_H
+#ifndef CARROT_QT_CARROTGUI_H
+#define CARROT_QT_CARROTGUI_H
 
 #if defined(HAVE_CONFIG_H)
 #include "config/carrot-config.h"
@@ -273,4 +273,4 @@ private Q_SLOTS:
     void onMenuSelection(QAction* action);
 };
 
-#endif // CARROT_QT_RAVENGUI_H
+#endif // CARROT_QT_CARROTGUI_H

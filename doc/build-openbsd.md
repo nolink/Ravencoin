@@ -23,7 +23,7 @@ See [dependencies.md](dependencies.md) for a complete overview.
 GCC
 -------
 
-The default C++ compiler that comes with OpenBSD 5.9 is g++ 4.2. This version is old (from 2007), and is not able to compile the current version of Raven Core, primarily as it has no C++11 support, but even before there were issues. So here we will be installing a newer compiler:
+The default C++ compiler that comes with OpenBSD 5.9 is g++ 4.2. This version is old (from 2007), and is not able to compile the current version of Carrot Core, primarily as it has no C++11 support, but even before there were issues. So here we will be installing a newer compiler:
 
 ```bash
 pkg_add g++ # (select newest 4.x version, e.g. 4.9.3)
@@ -39,12 +39,12 @@ Do not use `pkg_add boost`! The boost version installed thus is compiled using t
     ...
     Segmentation fault (core dumped)
 
-This makes it necessary to build boost, or at least the parts used by Raven Core, manually:
+This makes it necessary to build boost, or at least the parts used by Carrot Core, manually:
 
 ```
 # Pick some path to install boost to, here we create a directory within the carrot directory
-RAVEN_ROOT=$(pwd)
-BOOST_PREFIX="${RAVEN_ROOT}/boost"
+CARROT_ROOT=$(pwd)
+BOOST_PREFIX="${CARROT_ROOT}/boost"
 mkdir -p $BOOST_PREFIX
 
 # Fetch the source and verify that it is not tampered with
@@ -75,8 +75,8 @@ You cannot use the BerkeleyDB library from ports, for the same reason as boost a
 
 ```bash
 # Pick some path to install BDB to, here we create a directory within the carrot directory
-RAVEN_ROOT=$(pwd)
-BDB_PREFIX="${RAVEN_ROOT}/db4"
+CARROT_ROOT=$(pwd)
+BDB_PREFIX="${CARROT_ROOT}/db4"
 mkdir -p $BDB_PREFIX
 
 # Fetch the source and verify that it is not tampered with
@@ -99,7 +99,7 @@ The standard ulimit restrictions in OpenBSD are very strict:
     data(kbytes)         1572864
 
 This is, unfortunately, no longer enough to compile some `.cpp` files in the project,
-at least with gcc 4.9.3 (see issue https://github.com/RavenProject/Ravencoin/issues/6658).
+at least with gcc 4.9.3 (see issue https://github.com/CarrotProject/Carrotcoin/issues/6658).
 If your user is in the `staff` group the limit can be raised with:
 
     ulimit -d 3000000
@@ -108,7 +108,7 @@ The change will only affect the current shell and processes spawned by it. To
 make the change system-wide, change `datasize-cur` and `datasize-max` in
 `/etc/login.conf`, and reboot.
 
-### Building Raven Core
+### Building Carrot Core
 
 **Important**: use `gmake`, not `make`. The non-GNU `make` will exit with a horrible error.
 

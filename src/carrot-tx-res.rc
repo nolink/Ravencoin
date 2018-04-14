@@ -16,8 +16,8 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "Raven"
-            VALUE "FileDescription",    "carrot-tx (CLI Raven transaction editor utility)"
+            VALUE "CompanyName",        "Carrot"
+            VALUE "FileDescription",    "carrot-tx (CLI Carrot transaction editor utility)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
             VALUE "InternalName",       "carrot-tx"
             VALUE "LegalCopyright",     COPYRIGHT_STR

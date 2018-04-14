@@ -1,5 +1,5 @@
 # Copyright (c) 2013-2016 The Bitcoin Core developers
-# Copyright (c) 2017 The Raven Core developers
+# Copyright (c) 2017 The Carrot Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -19,28 +19,28 @@ else
 LIBUNIVALUE = $(UNIVALUE_LIBS)
 endif
 
-RAVEN_INCLUDES=-I$(builddir) -I$(builddir)/obj $(BDB_CPPFLAGS) $(BOOST_CPPFLAGS) $(LEVELDB_CPPFLAGS) $(CRYPTO_CFLAGS) $(SSL_CFLAGS)
+CARROT_INCLUDES=-I$(builddir) -I$(builddir)/obj $(BDB_CPPFLAGS) $(BOOST_CPPFLAGS) $(LEVELDB_CPPFLAGS) $(CRYPTO_CFLAGS) $(SSL_CFLAGS)
 
-RAVEN_INCLUDES += -I$(srcdir)/secp256k1/include
-RAVEN_INCLUDES += $(UNIVALUE_CFLAGS)
+CARROT_INCLUDES += -I$(srcdir)/secp256k1/include
+CARROT_INCLUDES += $(UNIVALUE_CFLAGS)
 
-LIBRAVEN_SERVER=libcarrot_server.a
-LIBRAVEN_COMMON=libcarrot_common.a
-LIBRAVEN_CONSENSUS=libcarrot_consensus.a
-LIBRAVEN_CLI=libcarrot_cli.a
-LIBRAVEN_UTIL=libcarrot_util.a
-LIBRAVEN_CRYPTO=crypto/libcarrot_crypto.a
-LIBRAVENQT=qt/libcarrotqt.a
+LIBCARROT_SERVER=libcarrot_server.a
+LIBCARROT_COMMON=libcarrot_common.a
+LIBCARROT_CONSENSUS=libcarrot_consensus.a
+LIBCARROT_CLI=libcarrot_cli.a
+LIBCARROT_UTIL=libcarrot_util.a
+LIBCARROT_CRYPTO=crypto/libcarrot_crypto.a
+LIBCARROTQT=qt/libcarrotqt.a
 LIBSECP256K1=secp256k1/libsecp256k1.la
 
 if ENABLE_ZMQ
-LIBRAVEN_ZMQ=libcarrot_zmq.a
+LIBCARROT_ZMQ=libcarrot_zmq.a
 endif
-if BUILD_RAVEN_LIBS
-LIBRAVENCONSENSUS=libcarrotconsensus.la
+if BUILD_CARROT_LIBS
+LIBCARROTCONSENSUS=libcarrotconsensus.la
 endif
 if ENABLE_WALLET
-LIBRAVEN_WALLET=libcarrot_wallet.a
+LIBCARROT_WALLET=libcarrot_wallet.a
 endif
 
 $(LIBSECP256K1): $(wildcard secp256k1/src/*) $(wildcard secp256k1/include/*)
@@ -49,33 +49,33 @@ $(LIBSECP256K1): $(wildcard secp256k1/src/*) $(wildcard secp256k1/include/*)
 # Make is not made aware of per-object dependencies to avoid limiting building parallelization
 # But to build the less dependent modules first, we manually select their order here:
 EXTRA_LIBRARIES += \
-  $(LIBRAVEN_CRYPTO) \
-  $(LIBRAVEN_UTIL) \
-  $(LIBRAVEN_COMMON) \
-  $(LIBRAVEN_CONSENSUS) \
-  $(LIBRAVEN_SERVER) \
-  $(LIBRAVEN_CLI) \
-  $(LIBRAVEN_WALLET) \
-  $(LIBRAVEN_ZMQ)
+  $(LIBCARROT_CRYPTO) \
+  $(LIBCARROT_UTIL) \
+  $(LIBCARROT_COMMON) \
+  $(LIBCARROT_CONSENSUS) \
+  $(LIBCARROT_SERVER) \
+  $(LIBCARROT_CLI) \
+  $(LIBCARROT_WALLET) \
+  $(LIBCARROT_ZMQ)
 
-lib_LTLIBRARIES = $(LIBRAVENCONSENSUS)
+lib_LTLIBRARIES = $(LIBCARROTCONSENSUS)
 
 bin_PROGRAMS =
 noinst_PROGRAMS =
 TESTS =
 BENCHMARKS =
 
-if BUILD_RAVEND
+if BUILD_CARROTD
   bin_PROGRAMS += carrotd
 endif
 
-if BUILD_RAVEN_UTILS
+if BUILD_CARROT_UTILS
   bin_PROGRAMS += carrot-cli carrot-tx
 endif
 
 .PHONY: FORCE check-symbols check-security
 # carrot core #
-RAVEN_CORE_H = \
+CARROT_CORE_H = \
   addrdb.h \
   addrman.h \
   base58.h \
@@ -183,7 +183,7 @@ obj/build.h: FORCE
 libcarrot_util_a-clientversion.$(OBJEXT): obj/build.h
 
 # server: shared between carrotd and carrot-qt
-libcarrot_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
+libcarrot_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(CARROT_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
 libcarrot_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libcarrot_server_a_SOURCES = \
   addrdb.cpp \
@@ -224,10 +224,10 @@ libcarrot_server_a_SOURCES = \
   validation.cpp \
   validationinterface.cpp \
   versionbits.cpp \
-  $(RAVEN_CORE_H)
+  $(CARROT_CORE_H)
 
 if ENABLE_ZMQ
-libcarrot_zmq_a_CPPFLAGS = $(RAVEN_INCLUDES) $(ZMQ_CFLAGS)
+libcarrot_zmq_a_CPPFLAGS = $(CARROT_INCLUDES) $(ZMQ_CFLAGS)
 libcarrot_zmq_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libcarrot_zmq_a_SOURCES = \
   zmq/zmqabstractnotifier.cpp \
@@ -238,7 +238,7 @@ endif
 
 # wallet: shared between carrotd and carrot-qt, but only linked
 # when wallet enabled
-libcarrot_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES)
+libcarrot_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(CARROT_INCLUDES)
 libcarrot_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libcarrot_wallet_a_SOURCES = \
   wallet/crypter.cpp \
@@ -250,7 +250,7 @@ libcarrot_wallet_a_SOURCES = \
   wallet/rpcwallet.cpp \
   wallet/wallet.cpp \
   wallet/walletdb.cpp \
-  $(RAVEN_CORE_H)
+  $(CARROT_CORE_H)
 
 # crypto primitives library
 crypto_libcarrot_crypto_a_CPPFLAGS = $(AM_CPPFLAGS)
@@ -316,7 +316,7 @@ crypto_libcarrot_crypto_a_SOURCES += crypto/sha256_sse4.cpp
 endif
 
 # consensus: shared between all executables that validate any consensus rules.
-libcarrot_consensus_a_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES)
+libcarrot_consensus_a_CPPFLAGS = $(AM_CPPFLAGS) $(CARROT_INCLUDES)
 libcarrot_consensus_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libcarrot_consensus_a_SOURCES = \
   amount.h \
@@ -351,7 +351,7 @@ libcarrot_consensus_a_SOURCES = \
   version.h
 
 # common: shared between carrotd, and carrot-qt and non-server tools
-libcarrot_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES)
+libcarrot_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(CARROT_INCLUDES)
 libcarrot_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libcarrot_common_a_SOURCES = \
   base58.cpp \
@@ -371,12 +371,12 @@ libcarrot_common_a_SOURCES = \
   script/sign.cpp \
   script/standard.cpp \
   warnings.cpp \
-  $(RAVEN_CORE_H)
+  $(CARROT_CORE_H)
 
 # util: shared between all executables.
 # This library *must* be included to make sure that the glibc
 # backward-compatibility objects and their sanity checks are linked.
-libcarrot_util_a_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES)
+libcarrot_util_a_CPPFLAGS = $(AM_CPPFLAGS) $(CARROT_INCLUDES)
 libcarrot_util_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libcarrot_util_a_SOURCES = \
   support/lockedpool.cpp \
@@ -395,25 +395,25 @@ libcarrot_util_a_SOURCES = \
   utilmoneystr.cpp \
   utilstrencodings.cpp \
   utiltime.cpp \
-  $(RAVEN_CORE_H)
+  $(CARROT_CORE_H)
 
 if GLIBC_BACK_COMPAT
 libcarrot_util_a_SOURCES += compat/glibc_compat.cpp
 endif
 
 # cli: shared between carrot-cli and carrot-qt
-libcarrot_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES)
+libcarrot_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(CARROT_INCLUDES)
 libcarrot_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libcarrot_cli_a_SOURCES = \
   rpc/client.cpp \
-  $(RAVEN_CORE_H)
+  $(CARROT_CORE_H)
 
 nodist_libcarrot_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # carrotd binary #
 carrotd_SOURCES = carrotd.cpp
-carrotd_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES)
+carrotd_CPPFLAGS = $(AM_CPPFLAGS) $(CARROT_INCLUDES)
 carrotd_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 carrotd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
@@ -422,14 +422,14 @@ carrotd_SOURCES += carrotd-res.rc
 endif
 
 carrotd_LDADD = \
-  $(LIBRAVEN_SERVER) \
-  $(LIBRAVEN_COMMON) \
+  $(LIBCARROT_SERVER) \
+  $(LIBCARROT_COMMON) \
   $(LIBUNIVALUE) \
-  $(LIBRAVEN_UTIL) \
-  $(LIBRAVEN_WALLET) \
-  $(LIBRAVEN_ZMQ) \
-  $(LIBRAVEN_CONSENSUS) \
-  $(LIBRAVEN_CRYPTO) \
+  $(LIBCARROT_UTIL) \
+  $(LIBCARROT_WALLET) \
+  $(LIBCARROT_ZMQ) \
+  $(LIBCARROT_CONSENSUS) \
+  $(LIBCARROT_CRYPTO) \
   $(LIBLEVELDB) \
   $(LIBLEVELDB_SSE42) \
   $(LIBMEMENV) \
@@ -439,7 +439,7 @@ carrotd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNP
 
 # carrot-cli binary #
 carrot_cli_SOURCES = carrot-cli.cpp
-carrot_cli_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES) $(EVENT_CFLAGS)
+carrot_cli_CPPFLAGS = $(AM_CPPFLAGS) $(CARROT_INCLUDES) $(EVENT_CFLAGS)
 carrot_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 carrot_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
@@ -448,17 +448,17 @@ carrot_cli_SOURCES += carrot-cli-res.rc
 endif
 
 carrot_cli_LDADD = \
-  $(LIBRAVEN_CLI) \
+  $(LIBCARROT_CLI) \
   $(LIBUNIVALUE) \
-  $(LIBRAVEN_UTIL) \
-  $(LIBRAVEN_CRYPTO)
+  $(LIBCARROT_UTIL) \
+  $(LIBCARROT_CRYPTO)
 
 carrot_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
 
 # carrot-tx binary #
 carrot_tx_SOURCES = carrot-tx.cpp
-carrot_tx_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES)
+carrot_tx_CPPFLAGS = $(AM_CPPFLAGS) $(CARROT_INCLUDES)
 carrot_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 carrot_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
@@ -468,17 +468,17 @@ endif
 
 carrot_tx_LDADD = \
   $(LIBUNIVALUE) \
-  $(LIBRAVEN_COMMON) \
-  $(LIBRAVEN_UTIL) \
-  $(LIBRAVEN_CONSENSUS) \
-  $(LIBRAVEN_CRYPTO) \
+  $(LIBCARROT_COMMON) \
+  $(LIBCARROT_UTIL) \
+  $(LIBCARROT_CONSENSUS) \
+  $(LIBCARROT_CRYPTO) \
   $(LIBSECP256K1)
 
 carrot_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
 #
 
 # carrotconsensus library #
-if BUILD_RAVEN_LIBS
+if BUILD_CARROT_LIBS
 include_HEADERS = script/carrotconsensus.h
 libcarrotconsensus_la_SOURCES = $(crypto_libcarrot_crypto_a_SOURCES) $(libcarrot_consensus_a_SOURCES)
 
@@ -488,7 +488,7 @@ endif
 
 libcarrotconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
 libcarrotconsensus_la_LIBADD = $(LIBSECP256K1)
-libcarrotconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_RAVEN_INTERNAL
+libcarrotconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_CARROT_INTERNAL
 libcarrotconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 
 endif

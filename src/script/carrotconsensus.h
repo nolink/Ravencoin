@@ -4,12 +4,12 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef CARROT_RAVENCONSENSUS_H
-#define CARROT_RAVENCONSENSUS_H
+#ifndef CARROT_CARROTCONSENSUS_H
+#define CARROT_CARROTCONSENSUS_H
 
 #include <stdint.h>
 
-#if defined(BUILD_RAVEN_INTERNAL) && defined(HAVE_CONFIG_H)
+#if defined(BUILD_CARROT_INTERNAL) && defined(HAVE_CONFIG_H)
 #include "config/carrot-config.h"
   #if defined(_WIN32)
     #if defined(DLL_EXPORT)
@@ -22,7 +22,7 @@
   #elif defined(HAVE_FUNC_ATTRIBUTE_VISIBILITY)
     #define EXPORT_SYMBOL __attribute__ ((visibility ("default")))
   #endif
-#elif defined(MSC_VER) && !defined(STATIC_LIBRAVENCONSENSUS)
+#elif defined(MSC_VER) && !defined(STATIC_LIBCARROTCONSENSUS)
   #define EXPORT_SYMBOL __declspec(dllimport)
 #endif
 
@@ -81,4 +81,4 @@ EXPORT_SYMBOL unsigned int carrotconsensus_version();
 
 #undef EXPORT_SYMBOL
 
-#endif // CARROT_RAVENCONSENSUS_H
+#endif // CARROT_CARROTCONSENSUS_H

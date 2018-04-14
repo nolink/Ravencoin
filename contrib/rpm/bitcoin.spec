@@ -37,7 +37,7 @@ Source30:	https://raw.githubusercontent.com/carrot/carrot/v%{version}/contrib/rp
 Source31:	https://raw.githubusercontent.com/carrot/carrot/v%{version}/contrib/rpm/carrot.fc
 Source32:	https://raw.githubusercontent.com/carrot/carrot/v%{version}/contrib/rpm/carrot.if
 
-Source100:	https://upload.wikimedia.org/wikipedia/commons/4/46/Raven.svg
+Source100:	https://upload.wikimedia.org/wikipedia/commons/4/46/Carrot.svg
 
 %if 0%{?_use_libressl:1}
 BuildRequires:	libressl-devel
@@ -54,7 +54,7 @@ Patch0:		carrot-0.12.0-libressl.patch
 
 
 %description
-Raven is a digital cryptographic currency that uses peer-to-peer technology to
+Carrot is a digital cryptographic currency that uses peer-to-peer technology to
 operate with no central authority or banks; managing transactions and the
 issuing of carrots is carried out collectively by the network.
 
@@ -79,17 +79,17 @@ BuildRequires:	%{_bindir}/inkscape
 BuildRequires:	%{_bindir}/convert
 
 %description core
-Raven is a digital cryptographic currency that uses peer-to-peer technology to
+Carrot is a digital cryptographic currency that uses peer-to-peer technology to
 operate with no central authority or banks; managing transactions and the
 issuing of carrots is carried out collectively by the network.
 
 This package contains the Qt based graphical client and node. If you are looking
-to run a Raven wallet, this is probably the package you want.
+to run a Carrot wallet, this is probably the package you want.
 %endif
 
 
 %package libs
-Summary:	Raven shared libraries
+Summary:	Carrot shared libraries
 Group:		System Environment/Libraries
 
 %description libs
@@ -134,7 +134,7 @@ If you use the graphical carrot-core client then you almost certainly do not
 need this package.
 
 %package utils
-Summary:	Raven utilities
+Summary:	Carrot utilities
 Group:		Applications/System
 
 %description utils
@@ -209,7 +209,7 @@ touch -a -m -t 201504280000 %{buildroot}%{_sysconfdir}/sysconfig/carrot
 mkdir -p %{buildroot}%{_unitdir}
 cat <<EOF > %{buildroot}%{_unitdir}/carrot.service
 [Unit]
-Description=Raven daemon
+Description=Carrot daemon
 After=syslog.target network.target
 
 [Service]
@@ -265,10 +265,10 @@ mkdir -p %{buildroot}%{_datadir}/applications
 cat <<EOF > %{buildroot}%{_datadir}/applications/carrot-core.desktop
 [Desktop Entry]
 Encoding=UTF-8
-Name=Raven
-Comment=Raven P2P Cryptocurrency
-Comment[fr]=Raven, monnaie virtuelle cryptographique pair à pair
-Comment[tr]=Raven, eşten eşe kriptografik sanal para birimi
+Name=Carrot
+Comment=Carrot P2P Cryptocurrency
+Comment[fr]=Carrot, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Carrot, eşten eşe kriptografik sanal para birimi
 Exec=carrot-qt %u
 Terminal=false
 Type=Application
@@ -322,7 +322,7 @@ test/functional/test_runner.py --extended
 getent group carrot >/dev/null || groupadd -r carrot
 getent passwd carrot >/dev/null ||
 	useradd -r -g carrot -d /var/lib/carrot -s /sbin/nologin \
-	-c "Raven wallet server" carrot
+	-c "Carrot wallet server" carrot
 exit 0
 
 %post server

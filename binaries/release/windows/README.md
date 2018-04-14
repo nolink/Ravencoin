@@ -1,4 +1,4 @@
-# RavenBinaries Windows Download Instructions
+# CarrotBinaries Windows Download Instructions
 
 1) Download and copy executables to desired folder 
 

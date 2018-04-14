@@ -162,7 +162,7 @@ that run in -regtest mode.
 
 **DEBUG_LOCKORDER**
 
-Raven Core is a multithreaded application, and deadlocks or other multithreading bugs
+Carrot Core is a multithreaded application, and deadlocks or other multithreading bugs
 can be very difficult to track down. Compiling with -DDEBUG_LOCKORDER (configure
 CXXFLAGS="-DDEBUG_LOCKORDER -g") inserts run-time checks to keep track of which locks
 are held, and adds warnings to the debug.log file if inconsistencies are detected.
@@ -211,7 +211,7 @@ Threads
 
 - ThreadRPCServer : Remote procedure call handler, listens on port 8766 for connections and services them.
 
-- RavenMiner : Generates carrots (if wallet is enabled).
+- CarrotMiner : Generates carrots (if wallet is enabled).
 
 - Shutdown : Does an orderly shutdown of everything.
 
@@ -221,7 +221,7 @@ Ignoring IDE/editor files
 In closed-source environments in which everyone uses the same IDE it is common
 to add temporary files it produces to the project-wide `.gitignore` file.
 
-However, in open source software such as Raven Core, where everyone uses
+However, in open source software such as Carrot Core, where everyone uses
 their own editors/IDE/tools, it is less common. Only you know what files your
 editor produces and this may change from version to version. The canonical way
 to do this is thus to create your local gitignore. Add this to `~/.gitconfig`:
@@ -251,9 +251,9 @@ Development guidelines
 ============================
 
 A few non-style-related recommendations for developers, as well as points to
-pay attention to for reviewers of Raven Core code.
+pay attention to for reviewers of Carrot Core code.
 
-General Raven Core
+General Carrot Core
 ----------------------
 
 - New features should be exposed on RPC first, then can be made available in the GUI
@@ -369,7 +369,7 @@ Strings and formatting
 
 - For `strprintf`, `LogPrint`, `LogPrintf` formatting characters don't need size specifiers
 
-  - *Rationale*: Raven Core uses tinyformat, which is type safe. Leave them out to avoid confusion
+  - *Rationale*: Carrot Core uses tinyformat, which is type safe. Leave them out to avoid confusion
 
 Variable names
 --------------
@@ -475,12 +475,12 @@ Subtrees
 
 Several parts of the repository are subtrees of software maintained elsewhere.
 
-Some of these are maintained by active developers of Raven Core, in which case changes should probably go
+Some of these are maintained by active developers of Carrot Core, in which case changes should probably go
 directly upstream without being PRed directly against the project.  They will be merged back in the next
 subtree merge.
 
 Others are external projects without a tight relationship with our project.  Changes to these should also
-be sent upstream but bugfixes may also be prudent to PR against Raven Core so that they can be integrated
+be sent upstream but bugfixes may also be prudent to PR against Carrot Core so that they can be integrated
 quickly.  Cosmetic changes should be purely taken upstream.
 
 There is a tool in contrib/devtools/git-subtree-check.sh to check a subtree directory for consistency with

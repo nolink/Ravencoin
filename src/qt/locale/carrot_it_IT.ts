@@ -88,7 +88,7 @@
     </message>
 </context>
 <context>
-    <name>RavenGUI</name>
+    <name>CarrotGUI</name>
     <message>
         <source>&amp;Transactions</source>
         <translation>Transazioni</translation>

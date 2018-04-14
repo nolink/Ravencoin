@@ -19,14 +19,14 @@ fi
 RETVAL=0
 
 prog=carrotd
-# you can override the lockfile via RAVEND_LOCKFILE in /etc/sysconfig/carrotd
-lockfile=${RAVEND_LOCKFILE-/var/lock/subsys/carrotd}
+# you can override the lockfile via CARROTD_LOCKFILE in /etc/sysconfig/carrotd
+lockfile=${CARROTD_LOCKFILE-/var/lock/subsys/carrotd}
 
-# carrotd defaults to /usr/bin/carrotd, override with RAVEND_BIN
-carrotd=${RAVEND_BIN-/usr/bin/carrotd}
+# carrotd defaults to /usr/bin/carrotd, override with CARROTD_BIN
+carrotd=${CARROTD_BIN-/usr/bin/carrotd}
 
-# carrotd opts default to -disablewallet, override with RAVEND_OPTS
-carrotd_opts=${RAVEND_OPTS--disablewallet}
+# carrotd opts default to -disablewallet, override with CARROTD_OPTS
+carrotd_opts=${CARROTD_OPTS--disablewallet}
 
 start() {
     echo -n $"Starting $prog: "

@@ -1,6 +1,6 @@
 #!/bin/bash
 # Copyright (c) 2016 The Bitcoin Core developers
-# Copyright (c) 2017 The Raven Core developers
+# Copyright (c) 2017 The Carrot Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -126,7 +126,7 @@ if [ $RET -ne 0 ]; then
       echo "Bad signature."
    elif [ $RET -eq 2 ]; then
       #or if a gpg error has occurred
-      echo "gpg error. Do you have the Raven Core binary release signing key installed?"
+      echo "gpg error. Do you have the Carrot Core binary release signing key installed?"
    fi
 
    echo "gpg output:"

@@ -3,9 +3,9 @@ Release Process
 
 Before every release candidate:
 
-* Update translations (ping wumpus on IRC) see [translation_process.md](https://github.com/RavenProject/Ravencoin/blob/master/doc/translation_process.md#synchronising-translations).
+* Update translations (ping wumpus on IRC) see [translation_process.md](https://github.com/CarrotProject/Carrotcoin/blob/master/doc/translation_process.md#synchronising-translations).
 
-* Update manpages, see [gen-manpages.sh](https://github.com/RavenProject/Ravencoin/blob/master/contrib/devtools/README.md#gen-manpagessh).
+* Update manpages, see [gen-manpages.sh](https://github.com/CarrotProject/Carrotcoin/blob/master/contrib/devtools/README.md#gen-manpagessh).
 
 Before every minor and major release:
 
@@ -21,7 +21,7 @@ Before every minor and major release:
 
 Before every major release:
 
-* Update hardcoded [seeds](/contrib/seeds/README.md), see [this pull request](https://github.com/RavenProject/Ravencoin/pull/7415) for an example.
+* Update hardcoded [seeds](/contrib/seeds/README.md), see [this pull request](https://github.com/CarrotProject/Carrotcoin/pull/7415) for an example.
 * Update [`BLOCK_CHAIN_SIZE`](/src/qt/intro.cpp) to the current size plus some overhead.
 * Update `src/chainparams.cpp` chainTxData with statistics about the transaction count and rate.
 * Update version of `contrib/gitian-descriptors/*.yml`: usually one'd want to do this on master after branching off the release - but be sure to at least do it before a new major release
@@ -36,9 +36,9 @@ Check out the source code in the following directory hierarchy.
     git clone https://github.com/carrot-core/gitian.sigs.git
     git clone https://github.com/carrot-core/carrot-detached-sigs.git
     git clone https://github.com/devrandom/gitian-builder.git
-    git clone https://github.com/RavenProject/Ravencoin.git
+    git clone https://github.com/CarrotProject/Carrotcoin.git
 
-### Raven maintainers/release engineers, suggestion for writing release notes
+### Carrot maintainers/release engineers, suggestion for writing release notes
 
 Write release notes. git shortlog helps a lot, for example:
 
@@ -108,7 +108,7 @@ NOTE: Offline builds must use the --url flag to ensure Gitian fetches only from 
 
 The gbuild invocations below <b>DO NOT DO THIS</b> by default.
 
-### Build and sign Raven Core for Linux, Windows, and OS X:
+### Build and sign Carrot Core for Linux, Windows, and OS X:
 
     pushd ./gitian-builder
     ./bin/gbuild --num-make 2 --memory 3000 --commit carrot=v${VERSION} ../carrot/contrib/gitian-descriptors/gitian-linux.yml
@@ -275,14 +275,14 @@ carrot.org (see below for carrot.org update instructions).
 
 - Update carrot.org version
 
-  - First, check to see if the Raven.org maintainers have prepared a
+  - First, check to see if the Carrot.org maintainers have prepared a
     release: https://github.com/carrot-dot-org/carrot.org/labels/Releases
 
       - If they have, it will have previously failed their Travis CI
         checks because the final release files weren't uploaded.
         Trigger a Travis CI rebuild---if it passes, merge.
 
-  - If they have not prepared a release, follow the Raven.org release
+  - If they have not prepared a release, follow the Carrot.org release
     instructions: https://github.com/carrot-dot-org/carrot.org#release-notes
 
   - After the pull request is merged, the website will automatically show the newest version within 15 minutes, as well
@@ -292,18 +292,18 @@ carrot.org (see below for carrot.org update instructions).
 
   - carrot-dev and carrot-core-dev mailing list
 
-  - Raven Core announcements list https://carrotcoin.org/en/list/announcements/join/
+  - Carrot Core announcements list https://carrotcoin.org/en/list/announcements/join/
 
   - carrotcore.org blog post
 
   - Update title of #carrot on Freenode IRC
 
-  - Optionally twitter, reddit /r/Raven, ... but this will usually sort out itself
+  - Optionally twitter, reddit /r/Carrot, ... but this will usually sort out itself
 
   - Notify BlueMatt so that he can start building [the PPAs](https://launchpad.net/~carrot/+archive/ubuntu/carrot)
 
   - Archive release notes for the new version to `doc/release-notes/` (branch `master` and branch of the release)
 
-  - Create a [new GitHub release](https://github.com/RavenProject/Ravencoin/releases/new) with a link to the archived release notes.
+  - Create a [new GitHub release](https://github.com/CarrotProject/Carrotcoin/releases/new) with a link to the archived release notes.
 
   - Celebrate

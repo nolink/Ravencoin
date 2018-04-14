@@ -1,5 +1,5 @@
 # Copyright (c) 2015-2016 The Bitcoin Core developers
-# Copyright (c) 2017 The Raven Core developers
+# Copyright (c) 2017 The Carrot Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -32,14 +32,14 @@ bench_bench_carrot_SOURCES = \
 
 nodist_bench_bench_carrot_SOURCES = $(GENERATED_BENCH_FILES)
 
-bench_bench_carrot_CPPFLAGS = $(AM_CPPFLAGS) $(RAVEN_INCLUDES) $(EVENT_CLFAGS) $(EVENT_PTHREADS_CFLAGS) -I$(builddir)/bench/
+bench_bench_carrot_CPPFLAGS = $(AM_CPPFLAGS) $(CARROT_INCLUDES) $(EVENT_CLFAGS) $(EVENT_PTHREADS_CFLAGS) -I$(builddir)/bench/
 bench_bench_carrot_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 bench_bench_carrot_LDADD = \
-  $(LIBRAVEN_SERVER) \
-  $(LIBRAVEN_COMMON) \
-  $(LIBRAVEN_UTIL) \
-  $(LIBRAVEN_CONSENSUS) \
-  $(LIBRAVEN_CRYPTO) \
+  $(LIBCARROT_SERVER) \
+  $(LIBCARROT_COMMON) \
+  $(LIBCARROT_UTIL) \
+  $(LIBCARROT_CONSENSUS) \
+  $(LIBCARROT_CRYPTO) \
   $(LIBLEVELDB) \
   $(LIBLEVELDB_SSE42) \
   $(LIBMEMENV) \
@@ -47,20 +47,20 @@ bench_bench_carrot_LDADD = \
   $(LIBUNIVALUE)
 
 if ENABLE_ZMQ
-bench_bench_carrot_LDADD += $(LIBRAVEN_ZMQ) $(ZMQ_LIBS)
+bench_bench_carrot_LDADD += $(LIBCARROT_ZMQ) $(ZMQ_LIBS)
 endif
 
 if ENABLE_WALLET
 bench_bench_carrot_SOURCES += bench/coin_selection.cpp
-bench_bench_carrot_LDADD += $(LIBRAVEN_WALLET) $(LIBRAVEN_CRYPTO)
+bench_bench_carrot_LDADD += $(LIBCARROT_WALLET) $(LIBCARROT_CRYPTO)
 endif
 
 bench_bench_carrot_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
 bench_bench_carrot_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
-CLEAN_RAVEN_BENCH = bench/*.gcda bench/*.gcno $(GENERATED_BENCH_FILES)
+CLEAN_CARROT_BENCH = bench/*.gcda bench/*.gcno $(GENERATED_BENCH_FILES)
 
-CLEANFILES += $(CLEAN_RAVEN_BENCH)
+CLEANFILES += $(CLEAN_CARROT_BENCH)
 
 bench/checkblock.cpp: bench/data/block413567.raw.h
 
@@ -70,7 +70,7 @@ bench: $(BENCH_BINARY) FORCE
 	$(BENCH_BINARY)
 
 carrot_bench_clean : FORCE
-	rm -f $(CLEAN_RAVEN_BENCH) $(bench_bench_carrot_OBJECTS) $(BENCH_BINARY)
+	rm -f $(CLEAN_CARROT_BENCH) $(bench_bench_carrot_OBJECTS) $(BENCH_BINARY)
 
 %.raw.h: %.raw
 	@$(MKDIR_P) $(@D)

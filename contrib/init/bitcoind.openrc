@@ -3,40 +3,40 @@
 # backward compatibility for existing gentoo layout 
 #
 if [ -d "/var/lib/carrot/.carrot" ]; then
-	RAVEND_DEFAULT_DATADIR="/var/lib/carrot/.carrot"
+	CARROTD_DEFAULT_DATADIR="/var/lib/carrot/.carrot"
 else
-	RAVEND_DEFAULT_DATADIR="/var/lib/carrotd"
+	CARROTD_DEFAULT_DATADIR="/var/lib/carrotd"
 fi
 
-RAVEND_CONFIGFILE=${RAVEND_CONFIGFILE:-/etc/carrot/carrot.conf}
-RAVEND_PIDDIR=${RAVEND_PIDDIR:-/var/run/carrotd}
-RAVEND_PIDFILE=${RAVEND_PIDFILE:-${RAVEND_PIDDIR}/carrotd.pid}
-RAVEND_DATADIR=${RAVEND_DATADIR:-${RAVEND_DEFAULT_DATADIR}}
-RAVEND_USER=${RAVEND_USER:-${RAVEN_USER:-carrot}}
-RAVEND_GROUP=${RAVEND_GROUP:-carrot}
-RAVEND_BIN=${RAVEND_BIN:-/usr/bin/carrotd}
-RAVEND_NICE=${RAVEND_NICE:-${NICELEVEL:-0}}
-RAVEND_OPTS="${RAVEND_OPTS:-${RAVEN_OPTS}}"
+CARROTD_CONFIGFILE=${CARROTD_CONFIGFILE:-/etc/carrot/carrot.conf}
+CARROTD_PIDDIR=${CARROTD_PIDDIR:-/var/run/carrotd}
+CARROTD_PIDFILE=${CARROTD_PIDFILE:-${CARROTD_PIDDIR}/carrotd.pid}
+CARROTD_DATADIR=${CARROTD_DATADIR:-${CARROTD_DEFAULT_DATADIR}}
+CARROTD_USER=${CARROTD_USER:-${CARROT_USER:-carrot}}
+CARROTD_GROUP=${CARROTD_GROUP:-carrot}
+CARROTD_BIN=${CARROTD_BIN:-/usr/bin/carrotd}
+CARROTD_NICE=${CARROTD_NICE:-${NICELEVEL:-0}}
+CARROTD_OPTS="${CARROTD_OPTS:-${CARROT_OPTS}}"
 
-name="Raven Core Daemon"
-description="Raven cryptocurrency P2P network daemon"
+name="Carrot Core Daemon"
+description="Carrot cryptocurrency P2P network daemon"
 
 command="/usr/bin/carrotd"
-command_args="-pid=\"${RAVEND_PIDFILE}\" \
-		-conf=\"${RAVEND_CONFIGFILE}\" \
-		-datadir=\"${RAVEND_DATADIR}\" \
+command_args="-pid=\"${CARROTD_PIDFILE}\" \
+		-conf=\"${CARROTD_CONFIGFILE}\" \
+		-datadir=\"${CARROTD_DATADIR}\" \
 		-daemon \
-		${RAVEND_OPTS}"
+		${CARROTD_OPTS}"
 
-required_files="${RAVEND_CONFIGFILE}"
-start_stop_daemon_args="-u ${RAVEND_USER} \
-			-N ${RAVEND_NICE} -w 2000"
-pidfile="${RAVEND_PIDFILE}"
+required_files="${CARROTD_CONFIGFILE}"
+start_stop_daemon_args="-u ${CARROTD_USER} \
+			-N ${CARROTD_NICE} -w 2000"
+pidfile="${CARROTD_PIDFILE}"
 
 # The retry schedule to use when stopping the daemon. Could be either
 # a timeout in seconds or multiple signal/timeout pairs (like
 # "SIGKILL/180 SIGTERM/300")
-retry="${RAVEND_SIGTERM_TIMEOUT}"
+retry="${CARROTD_SIGTERM_TIMEOUT}"
 
 depend() {
 	need localmount net
@@ -50,29 +50,29 @@ start_pre() {
 	checkpath \
 	-d \
 	--mode 0750 \
-	--owner "${RAVEND_USER}:${RAVEND_GROUP}" \
-	"${RAVEND_DATADIR}"
+	--owner "${CARROTD_USER}:${CARROTD_GROUP}" \
+	"${CARROTD_DATADIR}"
 
 	checkpath \
 	-d \
 	--mode 0755 \
-	--owner "${RAVEND_USER}:${RAVEND_GROUP}" \
-	"${RAVEND_PIDDIR}"
+	--owner "${CARROTD_USER}:${CARROTD_GROUP}" \
+	"${CARROTD_PIDDIR}"
 
 	checkpath -f \
-	-o ${RAVEND_USER}:${RAVEND_GROUP} \
+	-o ${CARROTD_USER}:${CARROTD_GROUP} \
 	-m 0660 \
-	${RAVEND_CONFIGFILE}
+	${CARROTD_CONFIGFILE}
 
 	checkconfig || return 1
 }
 
 checkconfig()
 {
-	if ! grep -qs '^rpcpassword=' "${RAVEND_CONFIGFILE}" ; then
+	if ! grep -qs '^rpcpassword=' "${CARROTD_CONFIGFILE}" ; then
 		eerror ""
 		eerror "ERROR: You must set a secure rpcpassword to run carrotd."
-		eerror "The setting must appear in ${RAVEND_CONFIGFILE}"
+		eerror "The setting must appear in ${CARROTD_CONFIGFILE}"
 		eerror ""
 		eerror "This password is security critical to securing wallets "
 		eerror "and must not be the same as the rpcuser setting."
@@ -84,7 +84,7 @@ checkconfig()
 		eerror "It is recommended that you also set alertnotify so you are "
 		eerror "notified of problems:"
 		eerror ""
-		eerror "ie: alertnotify=echo %%s | mail -s \"Raven Alert\"" \
+		eerror "ie: alertnotify=echo %%s | mail -s \"Carrot Alert\"" \
 			"admin@foo.com"
 		eerror ""
 		return 1

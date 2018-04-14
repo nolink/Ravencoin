@@ -1,13 +1,13 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: Raven
+Upstream-Name: Carrot
 Upstream-Contact: Satoshi Nakamoto <satoshin@gmx.com>
  irc://#carrot@freenode.net
-Source: https://github.com/RavenProject/Ravencoin
+Source: https://github.com/CarrotProject/Carrotcoin
 
 Files: *
-Copyright: 2009-2017, Raven Core Developers
+Copyright: 2009-2017, Carrot Core Developers
 License: Expat
-Comment: The Raven Core Developers encompasses the current developers listed on carrot.org,
+Comment: The Carrot Core Developers encompasses the current developers listed on carrot.org,
          as well as the numerous contributors to the project.
 
 Files: debian/*

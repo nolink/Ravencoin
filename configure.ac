@@ -7,17 +7,17 @@ define(_CLIENT_VERSION_BUILD, 0)
 define(_CLIENT_VERSION_IS_RELEASE, true)
 define(_COPYRIGHT_YEAR, 2017)
 define(_COPYRIGHT_HOLDERS,[The %s developers])
-define(_COPYRIGHT_HOLDERS_SUBSTITUTION,[[Raven Core]])
-AC_INIT([CarrotCore],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION],[https://github.com/RavenProject/Ravencoin/issues],[carrot],[https://carrotcoin.org/])
+define(_COPYRIGHT_HOLDERS_SUBSTITUTION,[[Carrot Core]])
+AC_INIT([CarrotCore],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION],[https://github.com/CarrotProject/Carrotcoin/issues],[carrot],[https://carrotcoin.org/])
 AC_CONFIG_SRCDIR([src/validation.cpp])
 AC_CONFIG_HEADERS([src/config/carrot-config.h])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([build-aux/m4])
 
-RAVEN_DAEMON_NAME=carrotd
-RAVEN_GUI_NAME=carrot-qt
-RAVEN_CLI_NAME=carrot-cli
-RAVEN_TX_NAME=carrot-tx
+CARROT_DAEMON_NAME=carrotd
+CARROT_GUI_NAME=carrot-qt
+CARROT_CLI_NAME=carrot-cli
+CARROT_TX_NAME=carrot-tx
 
 dnl Unless the user specified ARFLAGS, force it to be cr
 AC_ARG_VAR(ARFLAGS, [Flags for the archiver, defaults to <cr> if not set])
@@ -27,9 +27,9 @@ fi
 
 AC_CANONICAL_HOST
 
-AH_TOP([#ifndef RAVEN_CONFIG_H])
-AH_TOP([#define RAVEN_CONFIG_H])
-AH_BOTTOM([#endif //RAVEN_CONFIG_H])
+AH_TOP([#ifndef CARROT_CONFIG_H])
+AH_TOP([#define CARROT_CONFIG_H])
+AH_BOTTOM([#endif //CARROT_CONFIG_H])
 
 dnl faketime breaks configure and is only needed for make. Disable it here.
 unset FAKETIME
@@ -83,7 +83,7 @@ AC_PATH_TOOL(RANLIB, ranlib)
 AC_PATH_TOOL(STRIP, strip)
 AC_PATH_TOOL(GCOV, gcov)
 AC_PATH_PROG(LCOV, lcov)
-dnl Python 3.x is supported from 3.4 on (see https://github.com/RavenProject/Ravencoin/issues/7893)
+dnl Python 3.x is supported from 3.4 on (see https://github.com/CarrotProject/Carrotcoin/issues/7893)
 AC_PATH_PROGS([PYTHON], [python3.6 python3.5 python3.4 python3 python2.7 python2 python])
 AC_PATH_PROG(GENHTML, genhtml)
 AC_PATH_PROG([GIT], [git])
@@ -707,7 +707,7 @@ AC_SUBST(LIBMEMENV)
 
 if test x$enable_wallet != xno; then
     dnl Check for libdb_cxx only if wallet enabled
-    RAVEN_FIND_BDB48
+    CARROT_FIND_BDB48
 fi
 
 dnl Check for libminiupnpc (optional)
@@ -719,10 +719,10 @@ if test x$use_upnp != xno; then
   )
 fi
 
-RAVEN_QT_INIT
+CARROT_QT_INIT
 
 dnl sets $carrot_enable_qt, $carrot_enable_qt_test, $carrot_enable_qt_dbus
-RAVEN_QT_CONFIGURE([$use_pkgconfig], [qt5])
+CARROT_QT_CONFIGURE([$use_pkgconfig], [qt5])
 
 if test x$build_carrot_utils$build_carrotd$carrot_enable_qt$use_tests$use_bench = xnonononono; then
     use_boost=no
@@ -906,9 +906,9 @@ if test x$use_pkgconfig = xyes; then
     [
       PKG_CHECK_MODULES([SSL], [libssl],, [AC_MSG_ERROR(openssl  not found.)])
       PKG_CHECK_MODULES([CRYPTO], [libcrypto],,[AC_MSG_ERROR(libcrypto  not found.)])
-      RAVEN_QT_CHECK([PKG_CHECK_MODULES([PROTOBUF], [protobuf], [have_protobuf=yes], [RAVEN_QT_FAIL(libprotobuf not found)])])
+      CARROT_QT_CHECK([PKG_CHECK_MODULES([PROTOBUF], [protobuf], [have_protobuf=yes], [CARROT_QT_FAIL(libprotobuf not found)])])
       if test x$use_qr != xno; then
-        RAVEN_QT_CHECK([PKG_CHECK_MODULES([QR], [libqrencode], [have_qrencode=yes], [have_qrencode=no])])
+        CARROT_QT_CHECK([PKG_CHECK_MODULES([QR], [libqrencode], [have_qrencode=yes], [have_qrencode=no])])
       fi
       if test x$build_carrot_utils$build_carrotd$carrot_enable_qt$use_tests != xnononono; then
         PKG_CHECK_MODULES([EVENT], [libevent],, [AC_MSG_ERROR(libevent not found.)])
@@ -966,10 +966,10 @@ else
     esac
   fi
 
-  RAVEN_QT_CHECK(AC_CHECK_LIB([protobuf] ,[main],[PROTOBUF_LIBS=-lprotobuf], RAVEN_QT_FAIL(libprotobuf not found)))
+  CARROT_QT_CHECK(AC_CHECK_LIB([protobuf] ,[main],[PROTOBUF_LIBS=-lprotobuf], CARROT_QT_FAIL(libprotobuf not found)))
   if test x$use_qr != xno; then
-    RAVEN_QT_CHECK([AC_CHECK_LIB([qrencode], [main],[QR_LIBS=-lqrencode], [have_qrencode=no])])
-    RAVEN_QT_CHECK([AC_CHECK_HEADER([qrencode.h],, have_qrencode=no)])
+    CARROT_QT_CHECK([AC_CHECK_LIB([qrencode], [main],[QR_LIBS=-lqrencode], [have_qrencode=no])])
+    CARROT_QT_CHECK([AC_CHECK_HEADER([qrencode.h],, have_qrencode=no)])
   fi
 fi
 
@@ -1028,18 +1028,18 @@ AM_CONDITIONAL([EMBEDDED_UNIVALUE],[test x$need_bundled_univalue = xyes])
 AC_SUBST(UNIVALUE_CFLAGS)
 AC_SUBST(UNIVALUE_LIBS)
 
-RAVEN_QT_PATH_PROGS([PROTOC], [protoc],$protoc_bin_path)
+CARROT_QT_PATH_PROGS([PROTOC], [protoc],$protoc_bin_path)
 
 AC_MSG_CHECKING([whether to build carrotd])
-AM_CONDITIONAL([BUILD_RAVEND], [test x$build_carrotd = xyes])
+AM_CONDITIONAL([BUILD_CARROTD], [test x$build_carrotd = xyes])
 AC_MSG_RESULT($build_carrotd)
 
 AC_MSG_CHECKING([whether to build utils (carrot-cli carrot-tx)])
-AM_CONDITIONAL([BUILD_RAVEN_UTILS], [test x$build_carrot_utils = xyes])
+AM_CONDITIONAL([BUILD_CARROT_UTILS], [test x$build_carrot_utils = xyes])
 AC_MSG_RESULT($build_carrot_utils)
 
 AC_MSG_CHECKING([whether to build libraries])
-AM_CONDITIONAL([BUILD_RAVEN_LIBS], [test x$build_carrot_libs = xyes])
+AM_CONDITIONAL([BUILD_CARROT_LIBS], [test x$build_carrot_libs = xyes])
 if test x$build_carrot_libs = xyes; then
   AC_DEFINE(HAVE_CONSENSUS_LIB, 1, [Define this symbol if the consensus lib has been built])
   AC_CONFIG_FILES([libcarrotconsensus.pc:libcarrotconsensus.pc.in])
@@ -1200,10 +1200,10 @@ AC_SUBST(COPYRIGHT_YEAR, _COPYRIGHT_YEAR)
 AC_SUBST(COPYRIGHT_HOLDERS, "_COPYRIGHT_HOLDERS")
 AC_SUBST(COPYRIGHT_HOLDERS_SUBSTITUTION, "_COPYRIGHT_HOLDERS_SUBSTITUTION")
 AC_SUBST(COPYRIGHT_HOLDERS_FINAL, "_COPYRIGHT_HOLDERS_FINAL")
-AC_SUBST(RAVEN_DAEMON_NAME)
-AC_SUBST(RAVEN_GUI_NAME)
-AC_SUBST(RAVEN_CLI_NAME)
-AC_SUBST(RAVEN_TX_NAME)
+AC_SUBST(CARROT_DAEMON_NAME)
+AC_SUBST(CARROT_GUI_NAME)
+AC_SUBST(CARROT_CLI_NAME)
+AC_SUBST(CARROT_TX_NAME)
 
 AC_SUBST(RELDFLAGS)
 AC_SUBST(ERROR_CXXFLAGS)

@@ -68,7 +68,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>RavenGUI</name>
+    <name>CarrotGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Firmar &amp;mensaje...</translation>
@@ -114,8 +114,8 @@
         <translation>Reindexando bloques en el disco...</translation>
     </message>
     <message>
-        <source>Send coins to a Raven address</source>
-        <translation>Enviar monedas a una dirección Raven</translation>
+        <source>Send coins to a Carrot address</source>
+        <translation>Enviar monedas a una dirección Carrot</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -130,8 +130,8 @@
         <translation>Abre la consola de depuración y diágnostico</translation>
     </message>
     <message>
-        <source>Raven</source>
-        <translation>Raven</translation>
+        <source>Carrot</source>
+        <translation>Carrot</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -158,12 +158,12 @@
         <translation>Encriptar las llaves privadas que pertenecen a tu billetera</translation>
     </message>
     <message>
-        <source>Sign messages with your Raven addresses to prove you own them</source>
-        <translation>Firma mensajes con tus direcciones Raven para probar que eres dueño de ellas</translation>
+        <source>Sign messages with your Carrot addresses to prove you own them</source>
+        <translation>Firma mensajes con tus direcciones Carrot para probar que eres dueño de ellas</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Raven addresses</source>
-        <translation>Verificar mensajes para asegurar que estaban firmados con direcciones Raven especificas</translation>
+        <source>Verify messages to ensure they were signed with specified Carrot addresses</source>
+        <translation>Verificar mensajes para asegurar que estaban firmados con direcciones Carrot especificas</translation>
     </message>
     <message>
         <source>&amp;File</source>

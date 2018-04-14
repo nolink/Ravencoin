@@ -1,15 +1,15 @@
-Raven Core
+Carrot Core
 =============
 
 Setup
 ---------------------
-Raven Core is the original Raven client and it builds the backbone of the network. It downloads and, by default, stores the entire history of Raven transactions (which is currently more than 100 GBs); depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
+Carrot Core is the original Carrot client and it builds the backbone of the network. It downloads and, by default, stores the entire history of Carrot transactions (which is currently more than 100 GBs); depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
 
-To download Raven Core, visit [carrotcore.org](https://carrotcoin.org/en/releases/).
+To download Carrot Core, visit [carrotcore.org](https://carrotcoin.org/en/releases/).
 
 Running
 ---------------------
-The following are some helpful notes on how to run Raven on your native platform.
+The following are some helpful notes on how to run Carrot on your native platform.
 
 ### Unix
 
@@ -24,18 +24,18 @@ Unpack the files into a directory, and then run carrot-qt.exe.
 
 ### OS X
 
-Drag Raven-Core to your applications folder, and then run Raven-Core.
+Drag Carrot-Core to your applications folder, and then run Carrot-Core.
 
 ### Need Help?
 
-* See the documentation at the [Raven Wiki](https://en.carrot.it/wiki/Main_Page)
+* See the documentation at the [Carrot Wiki](https://en.carrot.it/wiki/Main_Page)
 for help and more information.
 * Ask for help on [#carrot](http://webchat.freenode.net?channels=carrot) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net?channels=carrot).
-* Ask for help on the [RavenTalk](https://carrottalk.org/) forums, in the [Technical Support board](https://carrottalk.org/index.php?board=4.0).
+* Ask for help on the [CarrotTalk](https://carrottalk.org/) forums, in the [Technical Support board](https://carrottalk.org/index.php?board=4.0).
 
 Building
 ---------------------
-The following are developer notes on how to build Raven on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
+The following are developer notes on how to build Carrot on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
 - [Dependencies](dependencies.md)
 - [OS X Build Notes](build-osx.md)
@@ -46,7 +46,7 @@ The following are developer notes on how to build Raven on your native platform.
 
 Development
 ---------------------
-The Raven repo's [root README](/README.md) contains relevant information on the development process and automated testing.
+The Carrot repo's [root README](/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Release Notes](release-notes.md)
@@ -62,9 +62,9 @@ The Raven repo's [root README](/README.md) contains relevant information on the 
 - [Benchmarking](benchmarking.md)
 
 ### Resources
-* Discuss on the [RavenTalk](https://carrottalk.org/) forums, in the [Development & Technical Discussion board](https://carrottalk.org/index.php?board=6.0).
+* Discuss on the [CarrotTalk](https://carrottalk.org/) forums, in the [Development & Technical Discussion board](https://carrottalk.org/index.php?board=6.0).
 * Discuss project-specific development on #carrot-core-dev on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=carrot-core-dev).
-* Discuss general Raven development on #carrot-dev on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=carrot-dev).
+* Discuss general Carrot development on #carrot-dev on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=carrot-dev).
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)
