@@ -494,7 +494,7 @@ inline uint256 HashX16R(const T1 pbegin, const T1 pend, const uint256 PrevBlockH
     return hash[15].trim256();
 }
 
-static void hashOrder(const int* order, char* output){
+static void getHashOrder(const int* order, char* output){
     for(int i=0;i<7;i++){
         if (order[i] >= 10)
             sprintf(output, "%c", 'A' + (order[i] - 10));
@@ -721,7 +721,7 @@ inline uint256 HashWeightedX8R(const T1 pbegin, const T1 pend, const uint256 Pre
 
 
     char hashOrderOut[8];
-    hashOrder(hashOrder, hashOrderOut);
+    getHashOrder(hashOrder, hashOrderOut);
     LogPrintf("hash order is: %s, prev block hash is: %s, x8r hash is: %s",  hashOrderOut, PrevBlockHash.GetHex(),  hash[7].trim256().GetHex());
     return hash[7].trim256();
 }
