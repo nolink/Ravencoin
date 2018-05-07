@@ -721,12 +721,12 @@ inline uint256 HashWeightedX8R(const T1 pbegin, const T1 pend, const uint256 Pre
     }
 
 
-    char hashOrderOut[8];
-    getHashOrder(hashOrder, hashOrderOut);\
-    std::string hashOrderStr = hashOrderOut;
-    std::string prevHash = PrevBlockHash.GetHex();
-    std::string x8rHash = hash[7].trim256().GetHex();
-    LogPrintf("hash order is: %s, prev block hash is: %s, x8r hash is: %s",  hashOrderStr, prevHash, x8rHash);
+    // char hashOrderOut[8];
+    // getHashOrder(hashOrder, hashOrderOut);
+    // std::string hashOrderStr = hashOrderOut;
+    // std::string prevHash = PrevBlockHash.GetHex();
+    // std::string x8rHash = hash[7].trim256().GetHex();
+    // LogPrintf("hash order is: %s, prev block hash is: %s, x8r hash is: %s",  hashOrderStr, prevHash, x8rHash);
     return hash[7].trim256();
 }
 
